@@ -3,8 +3,8 @@
 生成 Word 分析报告所需静态图表
 ==========================================================================
 功能概述:
-    使用 matplotlib + jieba + wordcloud 生成 11 张静态分析图表（PNG 格式），
-    覆盖评分分布、时间趋势、用户画像、文本情感四大分析主题。
+    使用 matplotlib + jieba + wordcloud 生成 12 张静态分析图表（PNG 格式），
+    覆盖评分分布、时间趋势、用户画像、文本情感、情感极性五大分析主题。
 
 图表清单:
     01  评分分布              饼图        各星级评价数量与占比
@@ -18,9 +18,10 @@
     09  词云                  词云图      全量评论关键词可视化
     10  高频词 TOP15          横向柱状图   出现次数最多的 15 个词
     11  好评差评关键词对比    双面板图    好评 TOP10 vs 差评 TOP10
+    12  情感极性分布          柱状图      SnowNLP 模型 正面/中性/负面
 
 数据源:    config.REVIEWS_CSV （携程评价，UTF-8-BOM 编码）
-输出路径:  config.CHART_DIR 下的 11 张 PNG 文件（150 DPI）
+输出路径:  config.CHART_DIR 下的 11 张 PNG 文件（300 DPI）
 
 """
 
@@ -78,8 +79,8 @@ def save_chart(fig, name, tight=True):
     path = config.CHART_DIR / f"{name}.png"
     if tight:
         fig.tight_layout()
-    # 保存为 150 DPI 的 PNG，白色背景
-    fig.savefig(path, dpi=150, bbox_inches="tight", facecolor="white")
+    # 保存为 300 DPI 的 PNG，白色背景（与 README 声明一致）
+    fig.savefig(path, dpi=300, bbox_inches="tight", facecolor="white")
     plt.close(fig)  # 关闭 Figure 释放内存
     print(f"保存: {path}")
 
@@ -459,6 +460,29 @@ def chart_positive_negative_keywords(df_valid, font):
     save_chart(fig, "11_好评差评关键词对比")
 
 
+# =====================================================================
+# 图12: 情感极性分布（SnowNLP 模型）
+# 对每条评论做中文情感极性打分，按 正面/中性/负面 展示分布
+# =====================================================================
+def chart_sentiment_polarity(df, font):
+    print("\n生成图12: 情感极性分布（SnowNLP 模型）")
+    dist = df["情感分类"].value_counts()
+    order = ["正面", "中性", "负面"]
+    vals = [int(dist.get(c, 0)) for c in order]
+    colors = [COLORS["success"], COLORS["warning"], COLORS["danger"]]
+
+    fig, ax = plt.subplots(figsize=(8, 5))
+    bars = ax.bar(order, vals, color=colors, alpha=0.85)
+    ax.set_ylabel("评论数", fontproperties=font, fontsize=12)
+    ax.set_title("情感极性分布（SnowNLP 模型）", fontproperties=font, fontsize=14, pad=15)
+    ax.set_xticklabels(order, fontproperties=font, fontsize=13)
+    for bar, val in zip(bars, vals):
+        ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 5,
+                f"{int(val)}", ha="center", fontsize=11, fontweight="bold")
+    ax.grid(axis="y", alpha=0.3)
+    save_chart(fig, "12_情感极性分布")
+
+
 def main():
     """图表生成主入口：加载数据 -> 设置字体 -> 依次生成 11 张图表。"""
     plt.style.use("default")
@@ -466,6 +490,13 @@ def main():
 
     # 统一从 data_utils 加载并预处理数据
     df, df_valid = data_utils.load_reviews()
+
+    # 情感极性（SnowNLP 模型）：为 df 追加 情感极性/情感分类 列
+    data_utils.add_sentiment_polarity(df)
+    # 重新推导有效时间子集，使其携带情感极性列
+    df_valid = df[df["年份"].notna()].copy()
+    df_valid["年份"] = df_valid["年份"].astype(int)
+    df_valid["月份"] = df_valid["月份"].astype(int)
 
     chart_score_distribution(df, font)
     chart_dimension_comparison(df, font)
@@ -477,6 +508,7 @@ def main():
     chart_length_distribution(df_valid, font)
     chart_wordcloud_and_top_words(df, font)
     chart_positive_negative_keywords(df_valid, font)
+    chart_sentiment_polarity(df, font)
 
     print("\n" + "=" * 60)
     print("所有图表生成完成!")

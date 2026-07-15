@@ -173,18 +173,71 @@ def add_table_summary(doc, headers, rows):
 
 def compute_metrics(df, df_valid):
     """
-    计算报告正文与表格引用的所有关键指标。
+    计算报告正文与表格引用的所有关键指标（全部由数据计算，避免硬编码漂移）。
 
     Returns:
         dict: 指标名 -> 数值
     """
     total = len(df)
-    score_5 = (df["总评分"] == 5.0).sum()
-    score_4 = (df["总评分"] == 4.0).sum()
-    score_3 = (df["总评分"] == 3.0).sum()
-    score_2 = (df["总评分"] == 2.0).sum()
-    score_1 = (df["总评分"] == 1.0).sum()
-    negative = (df["总评分"] <= 2.0).sum()  # 差评（1-2星）
+    score_5 = int((df["总评分"] == 5.0).sum())
+    score_4 = int((df["总评分"] == 4.0).sum())
+    score_3 = int((df["总评分"] == 3.0).sum())
+    score_2 = int((df["总评分"] == 2.0).sum())
+    score_1 = int((df["总评分"] == 1.0).sum())
+    negative = int((df["总评分"] <= 2.0).sum())  # 差评（1-2星）
+
+    # 分项维度均分
+    dim_scenery = df["景色评分"].mean()
+    dim_fun = df["趣味评分"].mean()
+    dim_value = df["性价比评分"].mean()
+
+    # 季节性（按春夏秋冬顺序）
+    seas = (df_valid.groupby("季节").agg(n=("评论ID", "count"))
+            .reindex(config.SEASON_ORDER).reset_index())
+    seasonal = {row["季节"]: (int(row["n"]), round(row["n"] / total * 100, 1))
+                for _, row in seas.iterrows()}
+
+    # 用户等级 TOP3
+    mem = df["用户等级"].value_counts()
+    member = {k: (int(mem.get(k, 0)), round(mem.get(k, 0) / total * 100, 1))
+              for k in ["铂金贵宾", "黄金贵宾", "钻石贵宾"]}
+    vip_rate = round(sum(v[0] for v in member.values()) / total * 100, 1)
+
+    # IP 属地 TOP4 + 长三角占比
+    ip = df["IP属地"].value_counts()
+    ip_top = {k: (int(ip.get(k, 0)), round(ip.get(k, 0) / total * 100, 1))
+              for k in ["江苏", "上海", "浙江", "山东"]}
+    yrd_rate = round((ip.get("江苏", 0) + ip.get("上海", 0) + ip.get("浙江", 0))
+                     / total * 100, 1)
+
+    # 年度峰值
+    yr = df_valid.groupby("年份").agg(n=("评论ID", "count")).reset_index()
+    peak_year = int(yr.sort_values("n", ascending=False).iloc[0]["年份"])
+    year_2025 = int(yr[yr["年份"] == 2025]["n"].iloc[0]) if 2025 in yr["年份"].values else 0
+    year_2026 = int(yr[yr["年份"] == 2026]["n"].iloc[0]) if 2026 in yr["年份"].values else 0
+
+    # 情感极性（SnowNLP 模型）
+    data_utils.add_sentiment_polarity(df)
+    model_pos = int((df["情感分类"] == "正面").sum())
+    model_neu = int((df["情感分类"] == "中性").sum())
+    model_neg = int((df["情感分类"] == "负面").sum())
+    model_pos_rate = round(model_pos / total * 100, 1)
+    model_neu_rate = round(model_neu / total * 100, 1)
+    model_neg_rate = round(model_neg / total * 100, 1)
+    agree_rate = round(
+        ((df["总评分"] >= config.POSITIVE_MIN_SCORE) & (df["情感分类"] == "正面")).sum()
+        / total * 100, 1)
+    silent_neg = int(
+        ((df["总评分"] >= config.POSITIVE_MIN_SCORE) & (df["情感分类"] == "负面")).sum())
+    silent_pos = int(
+        ((df["总评分"] <= config.NEGATIVE_MAX_SCORE) & (df["情感分类"] == "正面")).sum())
+    model_neg_words = [w for w, _ in
+                       data_utils.word_frequency(
+                           df[df["情感分类"] == "负面"]["评论内容"].dropna()).most_common(10)]
+    model_pos_words = [w for w, _ in
+                       data_utils.word_frequency(
+                           df[df["情感分类"] == "正面"]["评论内容"].dropna()).most_common(10)]
+
     return {
         "total": total,
         "avg_score": df["总评分"].mean(),
@@ -198,7 +251,29 @@ def compute_metrics(df, df_valid):
         "positive_rate": (score_5 + score_4) / total * 100,
         "negative_rate": negative / total * 100,
         "image_rate": (df["图片数"] > 0).sum() / total * 100,
-        # 使用 df_valid 的评论字数（data_utils 已补全该列，修复了旧版恒为 0 的问题）
+        "dim_scenery": dim_scenery,
+        "dim_fun": dim_fun,
+        "dim_value": dim_value,
+        "seasonal": seasonal,
+        "member": member,
+        "vip_rate": vip_rate,
+        "ip_top": ip_top,
+        "yrd_rate": yrd_rate,
+        "peak_year": peak_year,
+        "year_2025": year_2025,
+        "year_2026": year_2026,
+        "model_pos": model_pos,
+        "model_neu": model_neu,
+        "model_neg": model_neg,
+        "model_pos_rate": model_pos_rate,
+        "model_neu_rate": model_neu_rate,
+        "model_neg_rate": model_neg_rate,
+        "agree_rate": agree_rate,
+        "silent_neg": silent_neg,
+        "silent_pos": silent_pos,
+        "model_neg_words": model_neg_words,
+        "model_pos_words": model_pos_words,
+        # 使用 df_valid 的评论字数（data_utils 已补全该列）
         "avg_words": df_valid["评论字数"].mean(),
         "date_min": df_valid["发布时间_dt"].min(),
         "date_max": df_valid["发布时间_dt"].max(),
@@ -294,22 +369,22 @@ def build_chapter_scores(doc, m):
     add_chart(doc, "01_评分分布", width=5.5)
 
     add_heading_cn(doc, "3.2 分项评分对比", level=2)
-    add_paragraph_cn(doc, '从评分维度来看，游客对景区"景色"评分最高（4.51分），其次是"趣味"（4.45分），"性价比"评分相对较低（4.38分）。这表明景区自然景观和互动体验具有较强吸引力，但在价格感知、配套服务方面仍有提升空间。')
+    add_paragraph_cn(doc, f'从评分维度来看，游客对景区"景色"评分最高（{m["dim_scenery"]:.2f}分），其次是"趣味"（{m["dim_fun"]:.2f}分），"性价比"评分相对较低（{m["dim_value"]:.2f}分）。这表明景区自然景观和互动体验具有较强吸引力，但在价格感知、配套服务方面仍有提升空间。')
     add_chart(doc, "02_评分维度对比", width=5.5)
 
     add_paragraph_cn(doc, "主要洞察:", size=12, bold=True, color=BRAND_BLUE)
-    add_bullet_cn(doc, "景色（4.51分）：湿地生态、麋鹿成群是景区最大亮点，游客普遍认可。")
-    add_bullet_cn(doc, "趣味（4.45分）：喂麋鹿、观光车等互动体验深受亲子家庭喜爱。")
-    add_bullet_cn(doc, "性价比（4.38分）：相对最薄弱，部分游客认为门票、交通项目价格偏高。")
+    add_bullet_cn(doc, f"景色（{m['dim_scenery']:.2f}分）：湿地生态、麋鹿成群是景区最大亮点，游客普遍认可。")
+    add_bullet_cn(doc, f"趣味（{m['dim_fun']:.2f}分）：喂麋鹿、观光车等互动体验深受亲子家庭喜爱。")
+    add_bullet_cn(doc, f"性价比（{m['dim_value']:.2f}分）：相对最薄弱，部分游客认为门票、交通项目价格偏高。")
     doc.add_page_break()
 
 
-def build_chapter_time(doc):
+def build_chapter_time(doc, m):
     """第四章：时间趋势分析（年度 + 月度 + 季节性）。"""
     add_heading_cn(doc, "四、时间趋势分析", level=1)
 
     add_heading_cn(doc, "4.1 年度评价量趋势", level=2)
-    add_paragraph_cn(doc, "从年度维度看，2025年中华麋鹿园评价量出现爆发式增长，达到 1727 条，远超往年。2026年截至当前已累积 1006 条评价，热度持续上升。这与景区近年推广力度加大、亲子游市场增长等因素密切相关。")
+    add_paragraph_cn(doc, f"从年度维度看，2025年中华麋鹿园评价量出现爆发式增长，达到 {m['year_2025']} 条，远超往年。2026年截至当前已累积 {m['year_2026']} 条评价，热度持续上升。这与景区近年推广力度加大、亲子游市场增长等因素密切相关。")
     add_chart(doc, "03_年度趋势", width=6.0)
 
     add_heading_cn(doc, "4.2 月度评价趋势", level=2)
@@ -317,7 +392,7 @@ def build_chapter_time(doc):
     add_chart(doc, "04_月度趋势", width=6.0)
 
     add_heading_cn(doc, "4.3 季节性特征", level=2)
-    add_paragraph_cn(doc, "夏季（4-6月）是评价最多的季节，共 1228 条，占全年 40.3%。冬季（10-12月）次之，718 条；春季（1-3月）639 条；秋季（7-9月）最少，465 条。各季节评分均在 4.4 分以上，整体波动不大。")
+    add_paragraph_cn(doc, f"夏季（4-6月）是评价最多的季节，共 {m['seasonal']['夏季(4-6月)'][0]} 条，占全年 {m['seasonal']['夏季(4-6月)'][1]}%。冬季（10-12月）次之，{m['seasonal']['冬季(10-12月)'][0]} 条；春季（1-3月）{m['seasonal']['春季(1-3月)'][0]} 条；秋季（7-9月）最少，{m['seasonal']['秋季(7-9月)'][0]} 条。各季节评分均在 4.4 分以上，整体波动不大。")
     add_chart(doc, "05_季节性分析", width=5.5)
 
     add_paragraph_cn(doc, "运营建议:", size=12, bold=True, color=BRAND_BLUE)
@@ -327,16 +402,16 @@ def build_chapter_time(doc):
     doc.add_page_break()
 
 
-def build_chapter_users(doc):
+def build_chapter_users(doc, m):
     """第五章：用户画像分析（等级分布 + 地区分布）。"""
     add_heading_cn(doc, "五、用户画像分析", level=1)
 
     add_heading_cn(doc, "5.1 用户等级分布", level=2)
-    add_paragraph_cn(doc, "从携程用户等级看，景区吸引了大量高等级用户：铂金贵宾占比最高（35.6%），其次为黄金贵宾（26.1%）和钻石贵宾（20.9%）。高等级用户占比高，说明景区对资深旅行者、家庭出游群体具有较强吸引力。")
+    add_paragraph_cn(doc, f"从携程用户等级看，景区吸引了大量高等级用户：铂金贵宾占比最高（{m['member']['铂金贵宾'][1]}%），其次为黄金贵宾（{m['member']['黄金贵宾'][1]}%）和钻石贵宾（{m['member']['钻石贵宾'][1]}%）。高等级用户占比高，说明景区对资深旅行者、家庭出游群体具有较强吸引力。")
     add_chart(doc, "06_用户等级分布", width=5.5)
 
     add_heading_cn(doc, "5.2 来源地区分布", level=2)
-    add_paragraph_cn(doc, "江苏省游客是绝对主力，占比超过一半（51.5%），其次是上海（15.5%）、浙江（6.1%）、山东（6.1%）。景区属于典型的近程周边游目的地，长三角客群占主导地位。")
+    add_paragraph_cn(doc, f"江苏省游客是绝对主力，占比超过一半（{m['ip_top']['江苏'][1]}%），其次是上海（{m['ip_top']['上海'][1]}%）、浙江（{m['ip_top']['浙江'][1]}%）、山东（{m['ip_top']['山东'][1]}%）。景区属于典型的近程周边游目的地，长三角客群占主导地位。")
     add_chart(doc, "07_来源地区TOP10", width=5.5)
 
     add_paragraph_cn(doc, "营销建议:", size=12, bold=True, color=BRAND_BLUE)
@@ -364,20 +439,26 @@ def build_chapter_text(doc, m):
     add_heading_cn(doc, "6.4 评论长度分布", level=2)
     add_paragraph_cn(doc, f"游客平均评论字数为 {m['avg_words']:.0f} 字。大部分评论集中在 11-200 字之间，说明游客愿意分享具体体验，但长篇游记类评价相对较少。超过 1000 字的深度评价数量不多，但通常包含详细攻略和情感表达。")
     add_chart(doc, "08_评论长度分布", width=5.5)
+
+    add_heading_cn(doc, "6.5 情感极性模型分析（SnowNLP）", level=2)
+    add_paragraph_cn(doc, f"为弥补「仅按星级分段」的局限，本报告引入 SnowNLP 中文情感极性模型，对每条评论做 0-1 语义打分（正面≥0.6、负面≤0.4、中间为中性）。结果显示：正面 {m['model_pos_rate']}%、中性 {m['model_neu_rate']}%、负面 {m['model_neg_rate']}%。值得注意的是，模型判定的负面比例（{m['model_neg_rate']}%）显著高于按星级的差评率（{m['negative_rate']:.1f}%），说明不少高分评价在文字中仍夹杂负面体验（如排队、价格）。其中 {m['silent_neg']} 条 4-5 星评价被模型判为负面（隐性不满），值得在好评中进一步挖掘改进线索。")
+    add_chart(doc, "12_情感极性分布", width=5.5)
+    add_paragraph_cn(doc, "模型判定为负面评论的高频词（痛点信号）：" + "、".join(m["model_neg_words"][:10]) + "。")
     doc.add_page_break()
 
 
-def build_chapter_findings(doc):
+def build_chapter_findings(doc, m):
     """第七章：主要发现与改进建议。"""
     add_heading_cn(doc, "七、主要发现与改进建议", level=1)
 
     add_heading_cn(doc, "7.1 主要发现", level=2)
-    add_bullet_cn(doc, "口碑优势显著：平均 4.50 分、好评率 88.4%，5A 级景区品牌形象得到游客认可。")
+    add_bullet_cn(doc, f"口碑优势显著：平均 {m['avg_score']:.2f} 分、好评率 {m['positive_rate']:.1f}%，5A 级景区品牌形象得到游客认可。")
     add_bullet_cn(doc, "核心吸引力明确：近距离喂麋鹿、亲子互动、湿地观光是游客最满意的三大体验。")
-    add_bullet_cn(doc, '性价比是短板：分项评分中"性价比"最低（4.38分），部分游客认为门票和项目价格偏高。')
+    add_bullet_cn(doc, f'性价比是短板：分项评分中"性价比"最低（{m["dim_value"]:.2f}分），部分游客认为门票和项目价格偏高。')
     add_bullet_cn(doc, '排队是最大痛点：差评关键词中"排队"、"小时"出现频繁，高峰期游客等待体验不佳。')
-    add_bullet_cn(doc, "客流高度集中：夏季（4-6月）占全年 40.3%，景区淡旺季差异明显。")
-    add_bullet_cn(doc, "客群地域集中：江苏、上海、浙江三地游客占比超过 73%，周边市场仍有深挖空间。")
+    add_bullet_cn(doc, f"客流高度集中：夏季（4-6月）占全年 {m['seasonal']['夏季(4-6月)'][1]}%，景区淡旺季差异明显。")
+    add_bullet_cn(doc, f"客群地域集中：江苏、上海、浙江三地游客占比 {m['yrd_rate']}%，周边市场仍有深挖空间。")
+    add_bullet_cn(doc, f"文本情感比星级更严苛：SnowNLP 模型判定负面评论占 {m['model_neg_rate']}%，远高于按星级的差评率（{m['negative_rate']:.1f}%）；其中 {m['silent_neg']} 条高分评价被模型判为负面（隐性不满），提示需在好评中挖掘改进线索。")
 
     add_heading_cn(doc, "7.2 改进建议", level=2)
     add_bullet_cn(doc, "优化排队体验：在旺季增加观光车、电瓶车运力，设置预约排队系统，增设遮阳/避雨设施。")
@@ -401,6 +482,7 @@ def build_chapter_appendix(doc, m):
     add_bullet_cn(doc, "可视化：matplotlib 生成静态图表，嵌入 Word 报告。")
     add_bullet_cn(doc, "文本分析：jieba 中文分词 + 词频统计 + 词云生成。")
     add_bullet_cn(doc, "评分等级：好评 4-5 星，中评 3 星，差评 1-2 星。")
+    add_bullet_cn(doc, "情感分析：引入 SnowNLP 中文情感极性模型，对每条评论做 0-1 语义打分（正面≥0.6 / 负面≤0.4 / 中性之间），补充星级评分的语义视角，详见第六章 6.5 节。")
 
     add_heading_cn(doc, "8.3 其他说明", level=2)
     add_paragraph_cn(doc, "报告日期：{}".format(datetime.now().strftime("%Y年%m月%d日")))
@@ -417,10 +499,10 @@ def main():
     build_chapter_summary(doc, metrics)
     build_chapter_overview(doc, df, metrics)
     build_chapter_scores(doc, metrics)
-    build_chapter_time(doc)
-    build_chapter_users(doc)
+    build_chapter_time(doc, metrics)
+    build_chapter_users(doc, metrics)
     build_chapter_text(doc, metrics)
-    build_chapter_findings(doc)
+    build_chapter_findings(doc, metrics)
     build_chapter_appendix(doc, metrics)
 
     print(f"正在保存报告: {config.DOCX_REPORT}")

@@ -4,10 +4,10 @@
 ==========================================================================
 功能概述:
     使用 pandas + jieba + pyecharts 构建交互式 HTML 仪表盘，
-    包含 15 张 pyecharts 交互式图表，覆盖评分分布、时间趋势、
-    用户画像、文本分析等全部主题。
+    包含 17 张 pyecharts 交互式图表，覆盖评分分布、时间趋势、
+    用户画像、文本分析、情感极性等全部主题。
 
-图表清单（15 张交互式图表）:
+图表清单（17 张交互式图表）:
     1.  评分分布饼图              Pie      各星级评价数量与占比
     2.  评价等级饼图              Pie      好评/中评/差评三分类
     3.  评分维度雷达图            Radar    景色/趣味/性价比 + 近3年对比
@@ -23,6 +23,8 @@
     13. 高频词 TOP20             Bar      出现次数最多的 20 个词
     14. 评论长度分布              Bar      按字数区间统计
     15. 有图 vs 纯文字评论        Pie      图片评论占比
+    16. 情感极性分布              Pie      SnowNLP 模型 正面/中性/负面
+    17. 评分×情感交叉             Bar      星级 × 文本极性 堆叠柱
 
 数据源:
     data/中华麋鹿园_评价数据.csv （携程评价，UTF-8-BOM 编码）
@@ -470,6 +472,65 @@ def chart_image_ratio(has_image):
 
 
 # =====================================================================
+# 图16: 情感极性分布（SnowNLP 模型）
+# =====================================================================
+def chart_sentiment_polarity(df):
+    """情感极性分布环形图：正面 / 中性 / 负面（snownlp 打分）。"""
+    dist = df["情感分类"].value_counts()
+    colors = {"正面": "#2ECC71", "中性": "#F39C12", "负面": "#E74C3C", "未知": "#999"}
+    # 仅展示实际出现的类别（未知通常极少）
+    pairs = [(c, int(dist.get(c, 0))) for c in ["正面", "中性", "负面", "未知"] if dist.get(c, 0) > 0]
+    cl = [colors[c] for c, _ in pairs]
+    return (
+        Pie(init_opts=opts.InitOpts(width="800px", height="500px", theme=THEME))
+        .add(
+            series_name="情感极性",
+            data_pair=pairs,
+            radius=["35%", "65%"],
+            label_opts=opts.LabelOpts(formatter="{b}: {c} ({d}%)", font_size=14),
+            emphasis_opts=opts.EmphasisOpts(is_scale=False),
+        )
+        .set_colors(cl)
+        .set_global_opts(
+            title_opts=_title(
+                "情感极性分布（SnowNLP 模型）",
+                subtitle="正面≥0.6 / 负面≤0.4 / 中性之间",
+            ),
+            legend_opts=_legend_bottom(),
+        )
+    )
+
+
+# =====================================================================
+# 图17: 评分等级 × 情感极性 堆叠柱图
+# =====================================================================
+def chart_score_sentiment_cross(df_valid):
+    """评分等级(好评/中评/差评) × 情感分类(正面/中性/负面) 堆叠柱。"""
+    levels = ["好评(4-5星)", "中评(3星)", "差评(1-2星)"]
+    d = df_valid[df_valid["情感分类"] != "未知"]
+    cross = d.groupby(["评分等级", "情感分类"]).size().unstack(fill_value=0)
+    for c in ["正面", "中性", "负面"]:
+        if c not in cross.columns:
+            cross[c] = 0
+    cross = cross.reindex(levels).fillna(0)[["正面", "中性", "负面"]]
+
+    palette = {"正面": "#2ECC71", "中性": "#F39C12", "负面": "#E74C3C"}
+    bar = Bar(init_opts=opts.InitOpts(width="800px", height="500px", theme=THEME))
+    bar.add_xaxis(levels)
+    for c in ["正面", "中性", "负面"]:
+        bar.add_yaxis(
+            c, [int(v) for v in cross[c]], stack="sent", color=palette[c],
+            label_opts=opts.LabelOpts(is_show=True, position="inside"),
+        )
+    bar.set_global_opts(
+        title_opts=_title("评分等级 × 情感极性", subtitle="星级 vs 文本语义倾向"),
+        tooltip_opts=opts.TooltipOpts(trigger="axis", axis_pointer_type="shadow"),
+        legend_opts=_legend_top_right(),
+    )
+    return bar
+
+
+# =====================================================================
 # 分析摘要 JSON
 # =====================================================================
 def build_summary(df, df_valid, score_dist, dim_avgs, top_words,
@@ -493,6 +554,43 @@ def build_summary(df, df_valid, score_dist, dim_avgs, top_words,
         "TOP5高频词": [w for w, _ in top_words[:5]],
         "最活跃年份": int(yearly.sort_values("评价数", ascending=False).iloc[0]["年份"]),
         "最活跃季节": seasonal.sort_values("评价数", ascending=False).iloc[0]["季节"],
+        # ---- 情感极性（SnowNLP 模型） ----
+        "模型情感分布": {
+            "正面": int((df["情感分类"] == "正面").sum()),
+            "中性": int((df["情感分类"] == "中性").sum()),
+            "负面": int((df["情感分类"] == "负面").sum()),
+        },
+        "模型正面率": round((df["情感分类"] == "正面").sum() / len(df) * 100, 1),
+        "模型负面率": round((df["情感分类"] == "负面").sum() / len(df) * 100, 1),
+        "模型中性率": round((df["情感分类"] == "中性").sum() / len(df) * 100, 1),
+        "评分情感一致率": round(
+            ((df["总评分"] >= config.POSITIVE_MIN_SCORE) & (df["情感分类"] == "正面")).sum()
+            / len(df) * 100, 1
+        ),
+        "隐性不满数": int(
+            ((df["总评分"] >= config.POSITIVE_MIN_SCORE) & (df["情感分类"] == "负面")).sum()
+        ),
+        "隐性好评数": int(
+            ((df["总评分"] <= config.NEGATIVE_MAX_SCORE) & (df["情感分类"] == "正面")).sum()
+        ),
+        # ---- 客群聚合（供 HTML 报告定量描述） ----
+        "长三角占比": round(
+            (df["IP属地"].value_counts().get("江苏", 0)
+             + df["IP属地"].value_counts().get("上海", 0)
+             + df["IP属地"].value_counts().get("浙江", 0)) / len(df) * 100, 1
+        ),
+        "高等级会员占比": round(
+            (df["用户等级"].value_counts().get("铂金贵宾", 0)
+             + df["用户等级"].value_counts().get("黄金贵宾", 0)
+             + df["用户等级"].value_counts().get("钻石贵宾", 0)) / len(df) * 100, 1
+        ),
+        # ---- 模型情感关键词（正面 / 负面 TOP10） ----
+        "模型正面词TOP": [w for w, _ in
+                          data_utils.word_frequency(
+                              df[df["情感分类"] == "正面"]["评论内容"].dropna()).most_common(10)],
+        "模型负面词TOP": [w for w, _ in
+                          data_utils.word_frequency(
+                              df[df["情感分类"] == "负面"]["评论内容"].dropna()).most_common(10)],
     }
 
 
@@ -503,6 +601,12 @@ def main():
     print("  Step 1: 数据加载与预处理")
     print("=" * 60)
     df, df_valid = data_utils.load_reviews()
+    # ---- 情感极性（SnowNLP 模型） ----
+    data_utils.add_sentiment_polarity(df)
+    # 重新推导有效时间子集，使其携带情感极性列
+    df_valid = df[df["年份"].notna()].copy()
+    df_valid["年份"] = df_valid["年份"].astype(int)
+    df_valid["月份"] = df_valid["月份"].astype(int)
     print(f"原始数据: {len(df)} 条, {len(df.columns)} 列")
     print(f"有效时间数据: {len(df_valid)} 条")
     print(f"时间范围: {df_valid['发布时间_dt'].min()} ~ {df_valid['发布时间_dt'].max()}")
@@ -561,6 +665,8 @@ def main():
         chart_top_words(top_words),                                        # 13
         chart_length_distribution(df_valid),                              # 14
         chart_image_ratio(has_image),                                     # 15
+        chart_sentiment_polarity(df),                                     # 16 情感极性分布
+        chart_score_sentiment_cross(df_valid),                           # 17 评分×情感交叉
     ]
 
     # ---- 组装并渲染仪表盘 ----

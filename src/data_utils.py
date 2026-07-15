@@ -11,7 +11,19 @@
     classify_score_level()  将总评分映射为好评 / 中评 / 差评
     tokenize()          jieba 分词 + 停用词过滤的统一实现
     word_frequency()    对一组文本分词并统计词频，返回 Counter
+    add_sentiment_polarity()  用 snownlp 计算每条评论的情感极性(0-1)与分类
     STOPWORDS           统一维护的中文停用词表
+
+情感极性模型说明:
+    使用 SnowNLP（snownlp）对每条评论做中文情感极性打分，返回 0-1 区间，
+    0 为极负面、1 为极正面。阈值划分：
+        极性 >= 0.6  -> 正面
+        极性 <= 0.4  -> 负面
+        0.4 < 极性 < 0.6 -> 中性
+    该模型基于电商评论语料训练，对旅游场景的极性判断为「近似估计」，
+    与「按星级分段」互补：星级是游客给的客观评分，极性是文本语义倾向，
+    二者对比可发现「高分低极性」（隐性不满）等现象。snownlp 为懒加载，
+    未安装时自动跳过并给出警告，不影响其余分析流程。
 
 """
 
@@ -37,7 +49,10 @@ STOPWORDS = {
     # ---- 平台用语（非评论内容） ----
     "携程", "点评", "发布", "发布点评", "点评发布", "评价", "评论", "评分",
     # ---- 景区名称与通用词（过于宽泛，不具区分度） ----
-    "中华麋鹿园", "麋鹿园", "麋鹿", "大丰", "景区", "地方", "时候", "真的",
+    # 注意：核心主题词「麋鹿」已从停用词中移除——
+    # 对单景区分析而言它是最具代表性的高频词，应在词云/高频词中正常呈现；
+    # 仅保留「中华麋鹿园」「麋鹿园」等长专有名词变体以避免重复计数噪声。
+    "中华麋鹿园", "麋鹿园", "大丰", "景区", "地方", "时候", "真的",
     "比较", "觉得", "其实", "虽然", "不过", "这个", "那个", "这样", "那样",
     # ---- 程度副词与泛化形容词 ----
     "非常", "特别", "不错", "好玩", "有趣", "值得", "推荐", "还是",
@@ -163,3 +178,83 @@ def word_frequency(texts, min_len=2, drop_digits=True):
     """
     joined = " ".join(str(t) for t in texts if pd.notna(t))
     return Counter(tokenize(joined, min_len=min_len, drop_digits=drop_digits))
+
+
+# ========== 情感极性（SnowNLP 模型） ==========
+# 阈值：极性 >= 0.6 为正面，<= 0.4 为负面，介于两者之间为中性
+POSITIVE_POLARITY = 0.6
+NEGATIVE_POLARITY = 0.4
+
+
+def _snow_sentiment(text):
+    """
+    对单条文本调用 SnowNLP 计算情感极性得分(0-1)。
+
+    懒加载 snownlp；文本为空、非字符串或解析异常时返回 NaN，
+    由调用方统一处理为「未知」类别。
+
+    Args:
+        text (Any): 待计算的中文评论文本
+
+    Returns:
+        float: 情感极性得分(0-1)，失败时返回 float('nan')
+    """
+    try:
+        from snownlp import SnowNLP
+        if text is None or (isinstance(text, float) and pd.isna(text)):
+            return float("nan")
+        return float(SnowNLP(str(text)).sentiments)
+    except Exception:
+        return float("nan")
+
+
+def classify_polarity(polarity):
+    """
+    将情感极性得分映射为三分类。
+
+    规则：>= 0.6 正面，<= 0.4 负面，中间为中性；NaN 记为「未知」。
+
+    Args:
+        polarity (float): 情感极性得分(0-1)，可能为 NaN
+
+    Returns:
+        str: "正面" | "中性" | "负面" | "未知"
+    """
+    if polarity is None or (isinstance(polarity, float) and pd.isna(polarity)):
+        return "未知"
+    if polarity >= POSITIVE_POLARITY:
+        return "正面"
+    if polarity <= NEGATIVE_POLARITY:
+        return "负面"
+    return "中性"
+
+
+def add_sentiment_polarity(df, text_col="评论内容"):
+    """
+    为 DataFrame 追加情感极性得分与分类列（就地修改并返回）。
+
+    新增列：
+        - 情感极性: SnowNLP 打分(0-1)，失败为 NaN
+        - 情感分类: 正面 / 中性 / 负面 / 未知
+
+    Args:
+        df (DataFrame): 已加载的评价数据（需含 text_col 列）
+        text_col (str): 评论文本列名
+
+    Returns:
+        DataFrame: 含新增两列的同一对象
+    """
+    try:
+        import snownlp  # noqa: F401  仅用于探测是否可用
+    except Exception:
+        print("警告: snownlp 未安装，跳过情感极性计算（不影响其余分析）")
+        df["情感极性"] = float("nan")
+        df["情感分类"] = "未知"
+        return df
+
+    print("计算情感极性（SnowNLP 模型）...")
+    df["情感极性"] = df[text_col].apply(_snow_sentiment)
+    df["情感分类"] = df["情感极性"].apply(classify_polarity)
+    dist = df["情感分类"].value_counts()
+    print("  情感分类分布: " + ", ".join(f"{k}={v}" for k, v in dist.items()))
+    return df
