@@ -1,0 +1,10 @@
+# 数据采集与分析核心依赖（按 src/ 各脚本实际 import 精简）
+pandas>=2.0
+numpy>=1.24
+requests>=2.28
+jieba>=0.42
+wordcloud>=1.9
+matplotlib>=3.7
+python-docx>=0.8
+openpyxl>=3.1
+pyecharts>=2.0
