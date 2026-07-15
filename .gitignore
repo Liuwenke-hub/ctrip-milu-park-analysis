@@ -55,6 +55,3 @@ output/
 *.tmp
 *.bak
 *.log
-
-# 本地工作区与临时记录
-.workbuddy/
