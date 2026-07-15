@@ -1,0 +1,5896 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+                <script type="text/javascript" src="https://assets.pyecharts.org/assets/v6/echarts.min.js"></script>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/v6/echarts-wordcloud.min.js"></script>
+
+    
+</head>
+<body >
+    <style>.box { justify-content:center; display:flex; flex-wrap:wrap;  } </style>
+    <div class="box">
+                <div id="2e9aca6f8f9d4697b7b6627bcedd14c5" class="chart-container" style="width:800px; height:500px; "></div>
+    <script>
+        var chart_2e9aca6f8f9d4697b7b6627bcedd14c5 = echarts.init(
+            document.getElementById('2e9aca6f8f9d4697b7b6627bcedd14c5'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_2e9aca6f8f9d4697b7b6627bcedd14c5 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "pie",
+            "name": "\u8bc4\u5206\u5206\u5e03",
+            "colorBy": "data",
+            "legendHoverLink": true,
+            "selectedMode": false,
+            "selectedOffset": 10,
+            "clockwise": true,
+            "startAngle": 90,
+            "minAngle": 0,
+            "minShowLabelAngle": 0,
+            "avoidLabelOverlap": true,
+            "stillShowZeroSum": true,
+            "percentPrecision": 2,
+            "showEmptyCircle": true,
+            "emptyCircleStyle": {
+                "color": "lightgray",
+                "borderColor": "#000",
+                "borderWidth": 0,
+                "borderType": "solid",
+                "borderDashOffset": 0,
+                "borderCap": "butt",
+                "borderJoin": "bevel",
+                "borderMiterLimit": 10,
+                "opacity": 1
+            },
+            "data": [
+                {
+                    "name": "1\u661f",
+                    "value": 114
+                },
+                {
+                    "name": "2\u661f",
+                    "value": 43
+                },
+                {
+                    "name": "3\u661f",
+                    "value": 195
+                },
+                {
+                    "name": "4\u661f",
+                    "value": 552
+                },
+                {
+                    "name": "5\u661f",
+                    "value": 2146
+                }
+            ],
+            "radius": [
+                "35%",
+                "65%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "margin": 8,
+                "fontSize": 14,
+                "formatter": "{b}: {c} ({d}%)",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "labelLine": {
+                "show": true,
+                "showAbove": false,
+                "length": 15,
+                "length2": 15,
+                "smooth": false,
+                "minTurnAngle": 90,
+                "maxSurfaceAngle": 90
+            },
+            "emphasis": {
+                "disabled": false,
+                "scale": false,
+                "focus": "none",
+                "blurScope": "coordinateSystem",
+                "labelLine": {
+                    "show": false
+                }
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "1\u661f",
+                "2\u661f",
+                "3\u661f",
+                "4\u661f",
+                "5\u661f"
+            ],
+            "selected": {},
+            "show": true,
+            "bottom": "3%",
+            "orient": "horizontal",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "color": [
+        "#E74C3C",
+        "#E67E22",
+        "#F39C12",
+        "#27AE60",
+        "#2ECC71"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u4e2d\u534e\u9e8b\u9e7f\u56ed \u8bc4\u5206\u5206\u5e03",
+            "target": "blank",
+            "subtext": "\u603b\u8bc4\u4ef7\u6570: 3050 | \u5e73\u5747\u8bc4\u5206: 4.50",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_2e9aca6f8f9d4697b7b6627bcedd14c5.setOption(option_2e9aca6f8f9d4697b7b6627bcedd14c5);
+    </script>
+<br/>                <div id="271f0343188f4457b08af7d33576fd6b" class="chart-container" style="width:800px; height:500px; "></div>
+    <script>
+        var chart_271f0343188f4457b08af7d33576fd6b = echarts.init(
+            document.getElementById('271f0343188f4457b08af7d33576fd6b'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_271f0343188f4457b08af7d33576fd6b = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "pie",
+            "name": "\u8bc4\u4ef7\u7b49\u7ea7",
+            "colorBy": "data",
+            "legendHoverLink": true,
+            "selectedMode": false,
+            "selectedOffset": 10,
+            "clockwise": true,
+            "startAngle": 90,
+            "minAngle": 0,
+            "minShowLabelAngle": 0,
+            "avoidLabelOverlap": true,
+            "stillShowZeroSum": true,
+            "percentPrecision": 2,
+            "showEmptyCircle": true,
+            "emptyCircleStyle": {
+                "color": "lightgray",
+                "borderColor": "#000",
+                "borderWidth": 0,
+                "borderType": "solid",
+                "borderDashOffset": 0,
+                "borderCap": "butt",
+                "borderJoin": "bevel",
+                "borderMiterLimit": 10,
+                "opacity": 1
+            },
+            "data": [
+                {
+                    "name": "\u597d\u8bc4(4-5\u661f)",
+                    "value": 2698
+                },
+                {
+                    "name": "\u4e2d\u8bc4(3\u661f)",
+                    "value": 195
+                },
+                {
+                    "name": "\u5dee\u8bc4(1-2\u661f)",
+                    "value": 157
+                }
+            ],
+            "radius": [
+                "35%",
+                "65%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "margin": 8,
+                "fontSize": 14,
+                "formatter": "{b}: {c} ({d}%)",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "labelLine": {
+                "show": true,
+                "showAbove": false,
+                "length": 15,
+                "length2": 15,
+                "smooth": false,
+                "minTurnAngle": 90,
+                "maxSurfaceAngle": 90
+            },
+            "emphasis": {
+                "disabled": false,
+                "scale": false,
+                "focus": "none",
+                "blurScope": "coordinateSystem",
+                "labelLine": {
+                    "show": false
+                }
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u597d\u8bc4(4-5\u661f)",
+                "\u4e2d\u8bc4(3\u661f)",
+                "\u5dee\u8bc4(1-2\u661f)"
+            ],
+            "selected": {},
+            "show": true,
+            "bottom": "3%",
+            "orient": "horizontal",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "color": [
+        "#2ECC71",
+        "#F39C12",
+        "#E74C3C"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u8bc4\u4ef7\u7b49\u7ea7\u5206\u5e03",
+            "target": "blank",
+            "subtext": "\u597d\u8bc4 vs \u4e2d\u8bc4 vs \u5dee\u8bc4",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_271f0343188f4457b08af7d33576fd6b.setOption(option_271f0343188f4457b08af7d33576fd6b);
+    </script>
+<br/>                <div id="007bdf8a92514204b66f074268ad10b1" class="chart-container" style="width:800px; height:500px; "></div>
+    <script>
+        var chart_007bdf8a92514204b66f074268ad10b1 = echarts.init(
+            document.getElementById('007bdf8a92514204b66f074268ad10b1'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_007bdf8a92514204b66f074268ad10b1 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "radar",
+            "name": "\u603b\u5e73\u5747",
+            "data": [
+                [
+                    4.52,
+                    4.45,
+                    4.39
+                ]
+            ],
+            "label": {
+                "show": true,
+                "margin": 8,
+                "formatter": "{c}",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "selectedMode": false,
+            "zlevel": 0,
+            "z": 2,
+            "itemStyle": {
+                "normal": {}
+            },
+            "lineStyle": {
+                "show": false
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "radar",
+            "name": "2024\u5e74",
+            "data": [
+                [
+                    4.33,
+                    4.3,
+                    4.15
+                ]
+            ],
+            "label": {
+                "show": true,
+                "margin": 8,
+                "formatter": "{c}",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "selectedMode": false,
+            "zlevel": 0,
+            "z": 2,
+            "itemStyle": {
+                "normal": {}
+            },
+            "lineStyle": {
+                "show": false
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "radar",
+            "name": "2025\u5e74",
+            "data": [
+                [
+                    4.51,
+                    4.44,
+                    4.36
+                ]
+            ],
+            "label": {
+                "show": true,
+                "margin": 8,
+                "formatter": "{c}",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "selectedMode": false,
+            "zlevel": 0,
+            "z": 2,
+            "itemStyle": {
+                "normal": {}
+            },
+            "lineStyle": {
+                "show": false
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        },
+        {
+            "type": "radar",
+            "name": "2026\u5e74",
+            "data": [
+                [
+                    4.53,
+                    4.46,
+                    4.42
+                ]
+            ],
+            "label": {
+                "show": true,
+                "margin": 8,
+                "formatter": "{c}",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "selectedMode": false,
+            "zlevel": 0,
+            "z": 2,
+            "itemStyle": {
+                "normal": {}
+            },
+            "lineStyle": {
+                "show": false
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u603b\u5e73\u5747",
+                "2024\u5e74",
+                "2025\u5e74",
+                "2026\u5e74"
+            ],
+            "selected": {},
+            "show": true,
+            "bottom": "3%",
+            "orient": "horizontal",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "radar": [
+        {
+            "indicator": [
+                {
+                    "name": "\u666f\u8272",
+                    "max": 5
+                },
+                {
+                    "name": "\u8da3\u5473",
+                    "max": 5
+                },
+                {
+                    "name": "\u6027\u4ef7\u6bd4",
+                    "max": 5
+                }
+            ],
+            "shape": "polygon",
+            "startAngle": 90,
+            "name": {
+                "textStyle": {
+                    "richInheritPlainLabel": true
+                }
+            },
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "splitArea": {
+                "show": true,
+                "areaStyle": {
+                    "opacity": 0
+                }
+            },
+            "axisLine": {
+                "show": true,
+                "onZero": true,
+                "onZeroAxisIndex": 0
+            }
+        }
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u666f\u8272\u00b7\u8da3\u5473\u00b7\u6027\u4ef7\u6bd4 \u4e09\u7ef4\u8bc4\u5206\u5bf9\u6bd4",
+            "target": "blank",
+            "subtext": "\u603b\u5e73\u5747 vs \u8fd13\u5e74",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_007bdf8a92514204b66f074268ad10b1.setOption(option_007bdf8a92514204b66f074268ad10b1);
+    </script>
+<br/>                <div id="413ae50b865c467cb24450f67046e3eb" class="chart-container" style="width:1200px; height:500px; "></div>
+    <script>
+        var chart_413ae50b865c467cb24450f67046e3eb = echarts.init(
+            document.getElementById('413ae50b865c467cb24450f67046e3eb'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_413ae50b865c467cb24450f67046e3eb = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "line",
+            "name": "\u8bc4\u4ef7\u6570\u91cf",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "stackStrategy": "samesign",
+            "data": [
+                [
+                    "2019-07",
+                    5
+                ],
+                [
+                    "2019-08",
+                    10
+                ],
+                [
+                    "2019-09",
+                    3
+                ],
+                [
+                    "2019-10",
+                    9
+                ],
+                [
+                    "2019-12",
+                    1
+                ],
+                [
+                    "2020-01",
+                    1
+                ],
+                [
+                    "2020-03",
+                    1
+                ],
+                [
+                    "2020-04",
+                    1
+                ],
+                [
+                    "2020-05",
+                    4
+                ],
+                [
+                    "2020-06",
+                    1
+                ],
+                [
+                    "2020-07",
+                    8
+                ],
+                [
+                    "2020-08",
+                    9
+                ],
+                [
+                    "2020-09",
+                    6
+                ],
+                [
+                    "2020-10",
+                    15
+                ],
+                [
+                    "2020-11",
+                    2
+                ],
+                [
+                    "2020-12",
+                    2
+                ],
+                [
+                    "2021-01",
+                    1
+                ],
+                [
+                    "2021-02",
+                    2
+                ],
+                [
+                    "2021-03",
+                    5
+                ],
+                [
+                    "2021-04",
+                    5
+                ],
+                [
+                    "2021-05",
+                    5
+                ],
+                [
+                    "2021-06",
+                    4
+                ],
+                [
+                    "2021-07",
+                    1
+                ],
+                [
+                    "2021-08",
+                    2
+                ],
+                [
+                    "2021-09",
+                    3
+                ],
+                [
+                    "2021-10",
+                    5
+                ],
+                [
+                    "2021-11",
+                    4
+                ],
+                [
+                    "2021-12",
+                    3
+                ],
+                [
+                    "2022-01",
+                    9
+                ],
+                [
+                    "2022-02",
+                    9
+                ],
+                [
+                    "2022-03",
+                    1
+                ],
+                [
+                    "2022-04",
+                    3
+                ],
+                [
+                    "2022-05",
+                    2
+                ],
+                [
+                    "2022-06",
+                    1
+                ],
+                [
+                    "2022-07",
+                    1
+                ],
+                [
+                    "2022-08",
+                    3
+                ],
+                [
+                    "2022-09",
+                    1
+                ],
+                [
+                    "2023-01",
+                    5
+                ],
+                [
+                    "2023-02",
+                    6
+                ],
+                [
+                    "2023-03",
+                    5
+                ],
+                [
+                    "2023-04",
+                    9
+                ],
+                [
+                    "2023-05",
+                    26
+                ],
+                [
+                    "2023-06",
+                    12
+                ],
+                [
+                    "2023-07",
+                    5
+                ],
+                [
+                    "2023-09",
+                    1
+                ],
+                [
+                    "2023-10",
+                    2
+                ],
+                [
+                    "2023-11",
+                    2
+                ],
+                [
+                    "2023-12",
+                    2
+                ],
+                [
+                    "2024-01",
+                    1
+                ],
+                [
+                    "2024-02",
+                    2
+                ],
+                [
+                    "2024-03",
+                    5
+                ],
+                [
+                    "2024-04",
+                    1
+                ],
+                [
+                    "2024-05",
+                    2
+                ],
+                [
+                    "2024-06",
+                    1
+                ],
+                [
+                    "2024-07",
+                    1
+                ],
+                [
+                    "2024-09",
+                    1
+                ],
+                [
+                    "2024-10",
+                    5
+                ],
+                [
+                    "2024-11",
+                    27
+                ],
+                [
+                    "2024-12",
+                    34
+                ],
+                [
+                    "2025-01",
+                    26
+                ],
+                [
+                    "2025-02",
+                    85
+                ],
+                [
+                    "2025-03",
+                    42
+                ],
+                [
+                    "2025-04",
+                    160
+                ],
+                [
+                    "2025-05",
+                    338
+                ],
+                [
+                    "2025-06",
+                    114
+                ],
+                [
+                    "2025-07",
+                    130
+                ],
+                [
+                    "2025-08",
+                    160
+                ],
+                [
+                    "2025-09",
+                    80
+                ],
+                [
+                    "2025-10",
+                    377
+                ],
+                [
+                    "2025-11",
+                    111
+                ],
+                [
+                    "2025-12",
+                    104
+                ],
+                [
+                    "2026-01",
+                    89
+                ],
+                [
+                    "2026-02",
+                    235
+                ],
+                [
+                    "2026-03",
+                    109
+                ],
+                [
+                    "2026-04",
+                    176
+                ],
+                [
+                    "2026-05",
+                    232
+                ],
+                [
+                    "2026-06",
+                    130
+                ],
+                [
+                    "2026-07",
+                    48
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": false,
+                "width": 3
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        },
+        {
+            "type": "line",
+            "name": "\u5e73\u5747\u8bc4\u5206",
+            "connectNulls": false,
+            "xAxisIndex": 0,
+            "yAxisIndex": 1,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": true,
+            "clip": true,
+            "step": false,
+            "stackStrategy": "samesign",
+            "data": [
+                [
+                    "2019-07",
+                    5.0
+                ],
+                [
+                    "2019-08",
+                    4.6
+                ],
+                [
+                    "2019-09",
+                    4.0
+                ],
+                [
+                    "2019-10",
+                    4.0
+                ],
+                [
+                    "2019-12",
+                    5.0
+                ],
+                [
+                    "2020-01",
+                    5.0
+                ],
+                [
+                    "2020-03",
+                    4.0
+                ],
+                [
+                    "2020-04",
+                    5.0
+                ],
+                [
+                    "2020-05",
+                    5.0
+                ],
+                [
+                    "2020-06",
+                    5.0
+                ],
+                [
+                    "2020-07",
+                    5.0
+                ],
+                [
+                    "2020-08",
+                    4.89
+                ],
+                [
+                    "2020-09",
+                    4.5
+                ],
+                [
+                    "2020-10",
+                    4.47
+                ],
+                [
+                    "2020-11",
+                    5.0
+                ],
+                [
+                    "2020-12",
+                    5.0
+                ],
+                [
+                    "2021-01",
+                    5.0
+                ],
+                [
+                    "2021-02",
+                    5.0
+                ],
+                [
+                    "2021-03",
+                    5.0
+                ],
+                [
+                    "2021-04",
+                    4.0
+                ],
+                [
+                    "2021-05",
+                    4.6
+                ],
+                [
+                    "2021-06",
+                    4.75
+                ],
+                [
+                    "2021-07",
+                    2.0
+                ],
+                [
+                    "2021-08",
+                    5.0
+                ],
+                [
+                    "2021-09",
+                    4.0
+                ],
+                [
+                    "2021-10",
+                    3.2
+                ],
+                [
+                    "2021-11",
+                    4.75
+                ],
+                [
+                    "2021-12",
+                    5.0
+                ],
+                [
+                    "2022-01",
+                    4.67
+                ],
+                [
+                    "2022-02",
+                    4.89
+                ],
+                [
+                    "2022-03",
+                    3.0
+                ],
+                [
+                    "2022-04",
+                    4.33
+                ],
+                [
+                    "2022-05",
+                    5.0
+                ],
+                [
+                    "2022-06",
+                    5.0
+                ],
+                [
+                    "2022-07",
+                    5.0
+                ],
+                [
+                    "2022-08",
+                    4.33
+                ],
+                [
+                    "2022-09",
+                    4.0
+                ],
+                [
+                    "2023-01",
+                    4.6
+                ],
+                [
+                    "2023-02",
+                    4.67
+                ],
+                [
+                    "2023-03",
+                    5.0
+                ],
+                [
+                    "2023-04",
+                    4.89
+                ],
+                [
+                    "2023-05",
+                    4.62
+                ],
+                [
+                    "2023-06",
+                    4.67
+                ],
+                [
+                    "2023-07",
+                    4.6
+                ],
+                [
+                    "2023-09",
+                    5.0
+                ],
+                [
+                    "2023-10",
+                    4.5
+                ],
+                [
+                    "2023-11",
+                    5.0
+                ],
+                [
+                    "2023-12",
+                    5.0
+                ],
+                [
+                    "2024-01",
+                    5.0
+                ],
+                [
+                    "2024-02",
+                    5.0
+                ],
+                [
+                    "2024-03",
+                    5.0
+                ],
+                [
+                    "2024-04",
+                    5.0
+                ],
+                [
+                    "2024-05",
+                    5.0
+                ],
+                [
+                    "2024-06",
+                    4.0
+                ],
+                [
+                    "2024-07",
+                    1.0
+                ],
+                [
+                    "2024-09",
+                    3.0
+                ],
+                [
+                    "2024-10",
+                    3.4
+                ],
+                [
+                    "2024-11",
+                    4.3
+                ],
+                [
+                    "2024-12",
+                    4.29
+                ],
+                [
+                    "2025-01",
+                    4.42
+                ],
+                [
+                    "2025-02",
+                    4.4
+                ],
+                [
+                    "2025-03",
+                    4.52
+                ],
+                [
+                    "2025-04",
+                    4.55
+                ],
+                [
+                    "2025-05",
+                    4.34
+                ],
+                [
+                    "2025-06",
+                    4.65
+                ],
+                [
+                    "2025-07",
+                    4.65
+                ],
+                [
+                    "2025-08",
+                    4.69
+                ],
+                [
+                    "2025-09",
+                    4.49
+                ],
+                [
+                    "2025-10",
+                    4.4
+                ],
+                [
+                    "2025-11",
+                    4.59
+                ],
+                [
+                    "2025-12",
+                    4.5
+                ],
+                [
+                    "2026-01",
+                    4.47
+                ],
+                [
+                    "2026-02",
+                    4.57
+                ],
+                [
+                    "2026-03",
+                    4.49
+                ],
+                [
+                    "2026-04",
+                    4.53
+                ],
+                [
+                    "2026-05",
+                    4.36
+                ],
+                [
+                    "2026-06",
+                    4.67
+                ],
+                [
+                    "2026-07",
+                    4.52
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": false,
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "logBase": 10,
+            "seriesLayoutBy": "column",
+            "lineStyle": {
+                "show": false,
+                "width": 3
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u8bc4\u4ef7\u6570\u91cf",
+                "\u5e73\u5747\u8bc4\u5206"
+            ],
+            "selected": {},
+            "show": true,
+            "right": "4%",
+            "top": "3%",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "axis",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "axisLabel": {
+                "show": true,
+                "rotate": 30,
+                "margin": 8,
+                "fontSize": 10,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                "2019-07",
+                "2019-08",
+                "2019-09",
+                "2019-10",
+                "2019-12",
+                "2020-01",
+                "2020-03",
+                "2020-04",
+                "2020-05",
+                "2020-06",
+                "2020-07",
+                "2020-08",
+                "2020-09",
+                "2020-10",
+                "2020-11",
+                "2020-12",
+                "2021-01",
+                "2021-02",
+                "2021-03",
+                "2021-04",
+                "2021-05",
+                "2021-06",
+                "2021-07",
+                "2021-08",
+                "2021-09",
+                "2021-10",
+                "2021-11",
+                "2021-12",
+                "2022-01",
+                "2022-02",
+                "2022-03",
+                "2022-04",
+                "2022-05",
+                "2022-06",
+                "2022-07",
+                "2022-08",
+                "2022-09",
+                "2023-01",
+                "2023-02",
+                "2023-03",
+                "2023-04",
+                "2023-05",
+                "2023-06",
+                "2023-07",
+                "2023-09",
+                "2023-10",
+                "2023-11",
+                "2023-12",
+                "2024-01",
+                "2024-02",
+                "2024-03",
+                "2024-04",
+                "2024-05",
+                "2024-06",
+                "2024-07",
+                "2024-09",
+                "2024-10",
+                "2024-11",
+                "2024-12",
+                "2025-01",
+                "2025-02",
+                "2025-03",
+                "2025-04",
+                "2025-05",
+                "2025-06",
+                "2025-07",
+                "2025-08",
+                "2025-09",
+                "2025-10",
+                "2025-11",
+                "2025-12",
+                "2026-01",
+                "2026-02",
+                "2026-03",
+                "2026-04",
+                "2026-05",
+                "2026-06",
+                "2026-07"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "type": "value",
+            "name": "\u8bc4\u4ef7\u6570\u91cf",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        },
+        {
+            "type": "value",
+            "name": "\u5e73\u5747\u8bc4\u5206",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "axisLabel": {
+                "show": true,
+                "margin": 8,
+                "formatter": "{value}",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "min": 3.5,
+            "max": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        }
+    ],
+    "color": [
+        "#3498DB",
+        "#E74C3C"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u6708\u5ea6\u8bc4\u4ef7\u6570\u91cf\u4e0e\u8bc4\u5206\u8d8b\u52bf",
+            "target": "blank",
+            "subtext": "2018\u5e74\u81f3\u4eca",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ],
+    "dataZoom": [
+        {
+            "show": true,
+            "type": "slider",
+            "showDetail": true,
+            "showDataShadow": true,
+            "realtime": true,
+            "start": 0,
+            "end": 100,
+            "orient": "horizontal",
+            "zoomLock": false,
+            "filterMode": "filter"
+        }
+    ]
+};
+        chart_413ae50b865c467cb24450f67046e3eb.setOption(option_413ae50b865c467cb24450f67046e3eb);
+    </script>
+<br/>                <div id="f45a2a0de4e5429d897e193762f38bea" class="chart-container" style="width:900px; height:450px; "></div>
+    <script>
+        var chart_f45a2a0de4e5429d897e193762f38bea = echarts.init(
+            document.getElementById('f45a2a0de4e5429d897e193762f38bea'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_f45a2a0de4e5429d897e193762f38bea = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u8bc4\u4ef7\u6570",
+            "legendHoverLink": true,
+            "data": [
+                28,
+                50,
+                40,
+                30,
+                75,
+                80,
+                1727,
+                1019
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u8bc4\u4ef7\u6570"
+            ],
+            "selected": {},
+            "show": true,
+            "right": "4%",
+            "top": "3%",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "axis",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                "2019",
+                "2020",
+                "2021",
+                "2022",
+                "2023",
+                "2024",
+                "2025",
+                "2026"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "name": "\u8bc4\u4ef7\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        }
+    ],
+    "color": [
+        "#3498DB"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u5e74\u5ea6\u8bc4\u4ef7\u6570\u91cf",
+            "target": "blank",
+            "subtext": "\u6570\u636e\u91cf\u226510\u6761\u7684\u5e74\u4efd",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_f45a2a0de4e5429d897e193762f38bea.setOption(option_f45a2a0de4e5429d897e193762f38bea);
+    </script>
+<br/>                <div id="bf866039cc754dcda34ccbeefb801c9b" class="chart-container" style="width:800px; height:450px; "></div>
+    <script>
+        var chart_bf866039cc754dcda34ccbeefb801c9b = echarts.init(
+            document.getElementById('bf866039cc754dcda34ccbeefb801c9b'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_bf866039cc754dcda34ccbeefb801c9b = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u8bc4\u4ef7\u6570",
+            "legendHoverLink": true,
+            "data": [
+                639,
+                1228,
+                478,
+                705
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u5e73\u5747\u8bc4\u5206",
+            "yAxisIndex": 1,
+            "legendHoverLink": true,
+            "data": [
+                4.53,
+                4.48,
+                4.61,
+                4.43
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{c}",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u8bc4\u4ef7\u6570",
+                "\u5e73\u5747\u8bc4\u5206"
+            ],
+            "selected": {},
+            "show": true,
+            "right": "4%",
+            "top": "3%",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "axis",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                "\u6625\u5b63(1-3\u6708)",
+                "\u590f\u5b63(4-6\u6708)",
+                "\u79cb\u5b63(7-9\u6708)",
+                "\u51ac\u5b63(10-12\u6708)"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "type": "value",
+            "name": "\u8bc4\u4ef7\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        },
+        {
+            "type": "value",
+            "name": "\u8bc4\u5206",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "min": 4.0,
+            "max": 5.0,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        }
+    ],
+    "color": [
+        "#27AE60",
+        "#E74C3C"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u56db\u5b63\u8bc4\u4ef7\u91cf\u4e0e\u8bc4\u5206\u5bf9\u6bd4",
+            "target": "blank",
+            "subtext": "\u6625\u5b631-3\u6708 \u590f\u5b634-6\u6708 \u79cb\u5b637-9\u6708 \u51ac\u5b6310-12\u6708",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_bf866039cc754dcda34ccbeefb801c9b.setOption(option_bf866039cc754dcda34ccbeefb801c9b);
+    </script>
+<br/>                <div id="270e910112414b43871e44c3e73c4006" class="chart-container" style="width:800px; height:500px; "></div>
+    <script>
+        var chart_270e910112414b43871e44c3e73c4006 = echarts.init(
+            document.getElementById('270e910112414b43871e44c3e73c4006'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_270e910112414b43871e44c3e73c4006 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "pie",
+            "name": "\u7528\u6237\u7b49\u7ea7\u5206\u5e03",
+            "colorBy": "data",
+            "legendHoverLink": true,
+            "selectedMode": false,
+            "selectedOffset": 10,
+            "clockwise": true,
+            "startAngle": 90,
+            "minAngle": 0,
+            "minShowLabelAngle": 0,
+            "avoidLabelOverlap": true,
+            "stillShowZeroSum": true,
+            "percentPrecision": 2,
+            "showEmptyCircle": true,
+            "emptyCircleStyle": {
+                "color": "lightgray",
+                "borderColor": "#000",
+                "borderWidth": 0,
+                "borderType": "solid",
+                "borderDashOffset": 0,
+                "borderCap": "butt",
+                "borderJoin": "bevel",
+                "borderMiterLimit": 10,
+                "opacity": 1
+            },
+            "data": [
+                {
+                    "name": "\u94c2\u91d1\u8d35\u5bbe",
+                    "value": 1084
+                },
+                {
+                    "name": "\u9ec4\u91d1\u8d35\u5bbe",
+                    "value": 794
+                },
+                {
+                    "name": "\u94bb\u77f3\u8d35\u5bbe",
+                    "value": 639
+                },
+                {
+                    "name": "\u9ed1\u94bb\u8d35\u5bbe",
+                    "value": 30
+                }
+            ],
+            "radius": [
+                "30%",
+                "60%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "margin": 8,
+                "fontSize": 13,
+                "formatter": "{b}: {c} ({d}%)",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "labelLine": {
+                "show": true,
+                "showAbove": false,
+                "length": 15,
+                "length2": 15,
+                "smooth": false,
+                "minTurnAngle": 90,
+                "maxSurfaceAngle": 90
+            },
+            "emphasis": {
+                "disabled": false,
+                "scale": false,
+                "focus": "none",
+                "blurScope": "coordinateSystem",
+                "labelLine": {
+                    "show": false
+                }
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u94c2\u91d1\u8d35\u5bbe",
+                "\u9ec4\u91d1\u8d35\u5bbe",
+                "\u94bb\u77f3\u8d35\u5bbe",
+                "\u9ed1\u94bb\u8d35\u5bbe"
+            ],
+            "selected": {},
+            "show": true,
+            "bottom": "3%",
+            "orient": "horizontal",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "color": [
+        "#9b59b6",
+        "#3498db",
+        "#2ecc71",
+        "#f39c12",
+        "#e74c3c",
+        "#1abc9c",
+        "#34495e"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u7528\u6237\u7b49\u7ea7\u5206\u5e03",
+            "target": "blank",
+            "subtext": "\u8bc4\u4ef7\u7528\u6237\u7fa4\u4f53\u753b\u50cf",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_270e910112414b43871e44c3e73c4006.setOption(option_270e910112414b43871e44c3e73c4006);
+    </script>
+<br/>                <div id="6bc209186aa44232ad2a6249a529a035" class="chart-container" style="width:800px; height:450px; "></div>
+    <script>
+        var chart_6bc209186aa44232ad2a6249a529a035 = echarts.init(
+            document.getElementById('6bc209186aa44232ad2a6249a529a035'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_6bc209186aa44232ad2a6249a529a035 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u5e73\u5747\u8bc4\u5206",
+            "legendHoverLink": true,
+            "data": [
+                4.5,
+                4.52,
+                4.53,
+                4.6
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{c}",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u8bc4\u4ef7\u6570",
+            "legendHoverLink": true,
+            "data": [
+                1084,
+                794,
+                639,
+                30
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u5e73\u5747\u8bc4\u5206",
+                "\u8bc4\u4ef7\u6570"
+            ],
+            "selected": {},
+            "show": true,
+            "right": "4%",
+            "top": "3%",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "axis",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                "\u94c2\u91d1\u8d35\u5bbe",
+                "\u9ec4\u91d1\u8d35\u5bbe",
+                "\u94bb\u77f3\u8d35\u5bbe",
+                "\u9ed1\u94bb\u8d35\u5bbe"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        }
+    ],
+    "color": [
+        "#E74C3C",
+        "#3498DB"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u7528\u6237\u7b49\u7ea7\u4e0e\u8bc4\u5206\u5173\u7cfb",
+            "target": "blank",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_6bc209186aa44232ad2a6249a529a035.setOption(option_6bc209186aa44232ad2a6249a529a035);
+    </script>
+<br/>                <div id="8395c505d83a4c27a07e6b1537e8f6fb" class="chart-container" style="width:900px; height:450px; "></div>
+    <script>
+        var chart_8395c505d83a4c27a07e6b1537e8f6fb = echarts.init(
+            document.getElementById('8395c505d83a4c27a07e6b1537e8f6fb'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_8395c505d83a4c27a07e6b1537e8f6fb = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u8bc4\u4ef7\u6570",
+            "legendHoverLink": true,
+            "data": [
+                1567,
+                479,
+                184,
+                182,
+                77,
+                57,
+                48,
+                44,
+                25,
+                23
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u8bc4\u4ef7\u6570"
+            ],
+            "selected": {},
+            "show": true,
+            "right": "4%",
+            "top": "3%",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "name": "\u8bc4\u4ef7\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "axisLabel": {
+                "show": true,
+                "margin": 8,
+                "fontSize": 13,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                "\u6c5f\u82cf",
+                "\u4e0a\u6d77",
+                "\u6d59\u6c5f",
+                "\u5c71\u4e1c",
+                "\u5b89\u5fbd",
+                "\u5317\u4eac",
+                "\u6cb3\u5357",
+                "\u5e7f\u4e1c",
+                "\u6e56\u5317",
+                "\u56db\u5ddd"
+            ]
+        }
+    ],
+    "color": [
+        "#27AE60"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "IP\u5c5e\u5730 TOP10",
+            "target": "blank",
+            "subtext": "\u8bc4\u4ef7\u6765\u6e90\u5730\u533a\u5206\u5e03",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_8395c505d83a4c27a07e6b1537e8f6fb.setOption(option_8395c505d83a4c27a07e6b1537e8f6fb);
+    </script>
+<br/>                <div id="dda2c5477b9142dc9943449f93d59ad7" class="chart-container" style="width:900px; height:600px; "></div>
+    <script>
+        var chart_dda2c5477b9142dc9943449f93d59ad7 = echarts.init(
+            document.getElementById('dda2c5477b9142dc9943449f93d59ad7'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_dda2c5477b9142dc9943449f93d59ad7 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "wordCloud",
+            "name": "\u9ad8\u9891\u8bcd\u6c47",
+            "shape": "diamond",
+            "rotationRange": [
+                0,
+                0
+            ],
+            "rotationStep": 45,
+            "girdSize": 20,
+            "sizeRange": [
+                12,
+                60
+            ],
+            "data": [
+                {
+                    "name": "\u9e8b\u9e7f",
+                    "value": 2126,
+                    "textStyle": {
+                        "color": "rgb(10,145,113)"
+                    }
+                },
+                {
+                    "name": "\u89c2\u5149\u8f66",
+                    "value": 452,
+                    "textStyle": {
+                        "color": "rgb(63,152,21)"
+                    }
+                },
+                {
+                    "name": "\u80e1\u841d\u535c",
+                    "value": 403,
+                    "textStyle": {
+                        "color": "rgb(14,109,109)"
+                    }
+                },
+                {
+                    "name": "\u4f53\u9a8c",
+                    "value": 322,
+                    "textStyle": {
+                        "color": "rgb(43,97,100)"
+                    }
+                },
+                {
+                    "name": "\u8fd1\u8ddd\u79bb",
+                    "value": 289,
+                    "textStyle": {
+                        "color": "rgb(42,148,139)"
+                    }
+                },
+                {
+                    "name": "\u5b69\u5b50",
+                    "value": 231,
+                    "textStyle": {
+                        "color": "rgb(38,146,9)"
+                    }
+                },
+                {
+                    "name": "\u770b\u5230",
+                    "value": 222,
+                    "textStyle": {
+                        "color": "rgb(86,146,109)"
+                    }
+                },
+                {
+                    "name": "\u6392\u961f",
+                    "value": 218,
+                    "textStyle": {
+                        "color": "rgb(83,17,135)"
+                    }
+                },
+                {
+                    "name": "\u56ed\u533a",
+                    "value": 207,
+                    "textStyle": {
+                        "color": "rgb(22,157,9)"
+                    }
+                },
+                {
+                    "name": "\u7535\u74f6\u8f66",
+                    "value": 204,
+                    "textStyle": {
+                        "color": "rgb(75,154,57)"
+                    }
+                },
+                {
+                    "name": "\u5c0f\u670b\u53cb",
+                    "value": 193,
+                    "textStyle": {
+                        "color": "rgb(74,43,150)"
+                    }
+                },
+                {
+                    "name": "\u63a5\u89e6",
+                    "value": 188,
+                    "textStyle": {
+                        "color": "rgb(51,68,0)"
+                    }
+                },
+                {
+                    "name": "\u559c\u6b22",
+                    "value": 158,
+                    "textStyle": {
+                        "color": "rgb(120,42,46)"
+                    }
+                },
+                {
+                    "name": "\u5f88\u5927",
+                    "value": 154,
+                    "textStyle": {
+                        "color": "rgb(114,45,52)"
+                    }
+                },
+                {
+                    "name": "\u4e2d\u534e",
+                    "value": 153,
+                    "textStyle": {
+                        "color": "rgb(86,96,8)"
+                    }
+                },
+                {
+                    "name": "\u9002\u5408",
+                    "value": 147,
+                    "textStyle": {
+                        "color": "rgb(147,101,61)"
+                    }
+                },
+                {
+                    "name": "\u5f00\u5fc3",
+                    "value": 142,
+                    "textStyle": {
+                        "color": "rgb(104,113,64)"
+                    }
+                },
+                {
+                    "name": "\u91ce\u751f",
+                    "value": 142,
+                    "textStyle": {
+                        "color": "rgb(27,10,154)"
+                    }
+                },
+                {
+                    "name": "\u8fd8\u6709",
+                    "value": 135,
+                    "textStyle": {
+                        "color": "rgb(18,107,13)"
+                    }
+                },
+                {
+                    "name": "\u53ef\u7231",
+                    "value": 132,
+                    "textStyle": {
+                        "color": "rgb(80,151,35)"
+                    }
+                },
+                {
+                    "name": "\u4f46\u662f",
+                    "value": 130,
+                    "textStyle": {
+                        "color": "rgb(156,132,66)"
+                    }
+                },
+                {
+                    "name": "\u52a8\u7269",
+                    "value": 128,
+                    "textStyle": {
+                        "color": "rgb(79,57,2)"
+                    }
+                },
+                {
+                    "name": "\u65b9\u4fbf",
+                    "value": 123,
+                    "textStyle": {
+                        "color": "rgb(131,70,137)"
+                    }
+                },
+                {
+                    "name": "\u611f\u89c9",
+                    "value": 118,
+                    "textStyle": {
+                        "color": "rgb(3,23,62)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u5b9a",
+                    "value": 111,
+                    "textStyle": {
+                        "color": "rgb(120,99,37)"
+                    }
+                },
+                {
+                    "name": "\u6e38\u5ba2",
+                    "value": 109,
+                    "textStyle": {
+                        "color": "rgb(121,24,35)"
+                    }
+                },
+                {
+                    "name": "\u4e92\u52a8",
+                    "value": 106,
+                    "textStyle": {
+                        "color": "rgb(73,90,73)"
+                    }
+                },
+                {
+                    "name": "\u5efa\u8bae",
+                    "value": 106,
+                    "textStyle": {
+                        "color": "rgb(137,45,86)"
+                    }
+                },
+                {
+                    "name": "\u666f\u70b9",
+                    "value": 105,
+                    "textStyle": {
+                        "color": "rgb(136,158,110)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u822c",
+                    "value": 104,
+                    "textStyle": {
+                        "color": "rgb(98,33,97)"
+                    }
+                },
+                {
+                    "name": "\u770b\u770b",
+                    "value": 100,
+                    "textStyle": {
+                        "color": "rgb(44,21,0)"
+                    }
+                },
+                {
+                    "name": "\u5176\u4ed6",
+                    "value": 100,
+                    "textStyle": {
+                        "color": "rgb(157,99,133)"
+                    }
+                },
+                {
+                    "name": "\u6e38\u73a9",
+                    "value": 99,
+                    "textStyle": {
+                        "color": "rgb(48,100,92)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u53bb",
+                    "value": 96,
+                    "textStyle": {
+                        "color": "rgb(104,102,94)"
+                    }
+                },
+                {
+                    "name": "\u5582\u98df",
+                    "value": 93,
+                    "textStyle": {
+                        "color": "rgb(143,101,122)"
+                    }
+                },
+                {
+                    "name": "\u95e8\u7968",
+                    "value": 93,
+                    "textStyle": {
+                        "color": "rgb(31,125,22)"
+                    }
+                },
+                {
+                    "name": "\u6563\u517b",
+                    "value": 93,
+                    "textStyle": {
+                        "color": "rgb(11,156,123)"
+                    }
+                },
+                {
+                    "name": "\u73af\u5883",
+                    "value": 92,
+                    "textStyle": {
+                        "color": "rgb(125,97,50)"
+                    }
+                },
+                {
+                    "name": "\u65f6\u95f4",
+                    "value": 92,
+                    "textStyle": {
+                        "color": "rgb(13,88,87)"
+                    }
+                },
+                {
+                    "name": "\u76d0\u57ce",
+                    "value": 91,
+                    "textStyle": {
+                        "color": "rgb(27,103,74)"
+                    }
+                },
+                {
+                    "name": "\u670d\u52a1",
+                    "value": 89,
+                    "textStyle": {
+                        "color": "rgb(132,149,10)"
+                    }
+                },
+                {
+                    "name": "\u6027\u4ef7\u6bd4",
+                    "value": 83,
+                    "textStyle": {
+                        "color": "rgb(95,121,9)"
+                    }
+                },
+                {
+                    "name": "\u8282\u5047\u65e5",
+                    "value": 82,
+                    "textStyle": {
+                        "color": "rgb(15,78,24)"
+                    }
+                },
+                {
+                    "name": "\u5750\u8f66",
+                    "value": 82,
+                    "textStyle": {
+                        "color": "rgb(124,98,43)"
+                    }
+                },
+                {
+                    "name": "\u6e7f\u5730",
+                    "value": 82,
+                    "textStyle": {
+                        "color": "rgb(157,18,53)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u5708",
+                    "value": 80,
+                    "textStyle": {
+                        "color": "rgb(52,48,29)"
+                    }
+                },
+                {
+                    "name": "\u4eb2\u5b50",
+                    "value": 80,
+                    "textStyle": {
+                        "color": "rgb(145,144,16)"
+                    }
+                },
+                {
+                    "name": "\u53f8\u673a",
+                    "value": 78,
+                    "textStyle": {
+                        "color": "rgb(4,87,103)"
+                    }
+                },
+                {
+                    "name": "\u6709\u610f\u601d",
+                    "value": 77,
+                    "textStyle": {
+                        "color": "rgb(127,114,55)"
+                    }
+                },
+                {
+                    "name": "\u53ea\u80fd",
+                    "value": 77,
+                    "textStyle": {
+                        "color": "rgb(156,41,146)"
+                    }
+                },
+                {
+                    "name": "\u597d\u597d",
+                    "value": 76,
+                    "textStyle": {
+                        "color": "rgb(49,60,8)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u662f",
+                    "value": 76,
+                    "textStyle": {
+                        "color": "rgb(132,50,131)"
+                    }
+                },
+                {
+                    "name": "\u535a\u7269\u9986",
+                    "value": 75,
+                    "textStyle": {
+                        "color": "rgb(133,16,132)"
+                    }
+                },
+                {
+                    "name": "\u95e8\u53e3",
+                    "value": 73,
+                    "textStyle": {
+                        "color": "rgb(92,144,82)"
+                    }
+                },
+                {
+                    "name": "\u6e38\u89c8\u8f66",
+                    "value": 72,
+                    "textStyle": {
+                        "color": "rgb(65,52,156)"
+                    }
+                },
+                {
+                    "name": "\u4e94\u4e00",
+                    "value": 69,
+                    "textStyle": {
+                        "color": "rgb(137,36,88)"
+                    }
+                },
+                {
+                    "name": "\u603b\u4f53",
+                    "value": 68,
+                    "textStyle": {
+                        "color": "rgb(28,24,43)"
+                    }
+                },
+                {
+                    "name": "\u505c\u8f66",
+                    "value": 67,
+                    "textStyle": {
+                        "color": "rgb(77,7,63)"
+                    }
+                },
+                {
+                    "name": "\u6e38\u89c8",
+                    "value": 67,
+                    "textStyle": {
+                        "color": "rgb(12,75,17)"
+                    }
+                },
+                {
+                    "name": "\u666f\u8272",
+                    "value": 67,
+                    "textStyle": {
+                        "color": "rgb(140,62,10)"
+                    }
+                },
+                {
+                    "name": "\u8fdb\u5165",
+                    "value": 66,
+                    "textStyle": {
+                        "color": "rgb(119,150,146)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u6b21",
+                    "value": 64,
+                    "textStyle": {
+                        "color": "rgb(29,37,137)"
+                    }
+                },
+                {
+                    "name": "\u5708\u517b",
+                    "value": 64,
+                    "textStyle": {
+                        "color": "rgb(87,2,74)"
+                    }
+                },
+                {
+                    "name": "\u5de5\u4f5c\u4eba\u5458",
+                    "value": 62,
+                    "textStyle": {
+                        "color": "rgb(36,2,66)"
+                    }
+                },
+                {
+                    "name": "\u9e7f\u738b",
+                    "value": 59,
+                    "textStyle": {
+                        "color": "rgb(150,68,99)"
+                    }
+                },
+                {
+                    "name": "\u6574\u4f53",
+                    "value": 59,
+                    "textStyle": {
+                        "color": "rgb(138,12,114)"
+                    }
+                },
+                {
+                    "name": "\u7684\u8bdd",
+                    "value": 59,
+                    "textStyle": {
+                        "color": "rgb(81,23,3)"
+                    }
+                },
+                {
+                    "name": "\u4e58\u5750",
+                    "value": 58,
+                    "textStyle": {
+                        "color": "rgb(44,98,104)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u70b9",
+                    "value": 58,
+                    "textStyle": {
+                        "color": "rgb(103,40,21)"
+                    }
+                },
+                {
+                    "name": "\u56db\u4e0d\u50cf",
+                    "value": 58,
+                    "textStyle": {
+                        "color": "rgb(86,60,140)"
+                    }
+                },
+                {
+                    "name": "\u8fd9\u91cc",
+                    "value": 57,
+                    "textStyle": {
+                        "color": "rgb(45,26,12)"
+                    }
+                },
+                {
+                    "name": "\u9009\u62e9",
+                    "value": 57,
+                    "textStyle": {
+                        "color": "rgb(29,14,153)"
+                    }
+                },
+                {
+                    "name": "\u8fc7\u6765",
+                    "value": 57,
+                    "textStyle": {
+                        "color": "rgb(151,119,91)"
+                    }
+                },
+                {
+                    "name": "\u9700\u8981",
+                    "value": 57,
+                    "textStyle": {
+                        "color": "rgb(123,84,144)"
+                    }
+                },
+                {
+                    "name": "\u9664\u4e86",
+                    "value": 57,
+                    "textStyle": {
+                        "color": "rgb(62,34,95)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u4e0b",
+                    "value": 56,
+                    "textStyle": {
+                        "color": "rgb(91,37,81)"
+                    }
+                },
+                {
+                    "name": "\u5c0f\u5b69",
+                    "value": 56,
+                    "textStyle": {
+                        "color": "rgb(77,119,86)"
+                    }
+                },
+                {
+                    "name": "\u4eba\u592a\u591a",
+                    "value": 56,
+                    "textStyle": {
+                        "color": "rgb(23,24,29)"
+                    }
+                },
+                {
+                    "name": "5A",
+                    "value": 55,
+                    "textStyle": {
+                        "color": "rgb(121,87,127)"
+                    }
+                },
+                {
+                    "name": "\u6700\u5927",
+                    "value": 55,
+                    "textStyle": {
+                        "color": "rgb(63,154,92)"
+                    }
+                },
+                {
+                    "name": "\u76f4\u63a5",
+                    "value": 55,
+                    "textStyle": {
+                        "color": "rgb(72,63,144)"
+                    }
+                },
+                {
+                    "name": "\u53ea\u6709",
+                    "value": 53,
+                    "textStyle": {
+                        "color": "rgb(18,91,84)"
+                    }
+                },
+                {
+                    "name": "\u5047\u671f",
+                    "value": 53,
+                    "textStyle": {
+                        "color": "rgb(79,30,66)"
+                    }
+                },
+                {
+                    "name": "\u624d\u80fd",
+                    "value": 52,
+                    "textStyle": {
+                        "color": "rgb(139,33,96)"
+                    }
+                },
+                {
+                    "name": "\u7801\u5934",
+                    "value": 52,
+                    "textStyle": {
+                        "color": "rgb(26,122,78)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u80fd",
+                    "value": 51,
+                    "textStyle": {
+                        "color": "rgb(71,71,90)"
+                    }
+                },
+                {
+                    "name": "\u8f66\u4e0a",
+                    "value": 50,
+                    "textStyle": {
+                        "color": "rgb(106,132,68)"
+                    }
+                },
+                {
+                    "name": "\u800c\u4e14",
+                    "value": 50,
+                    "textStyle": {
+                        "color": "rgb(0,64,116)"
+                    }
+                },
+                {
+                    "name": "\u5fc5\u987b",
+                    "value": 50,
+                    "textStyle": {
+                        "color": "rgb(106,96,60)"
+                    }
+                },
+                {
+                    "name": "\u5750\u8239",
+                    "value": 50,
+                    "textStyle": {
+                        "color": "rgb(85,14,105)"
+                    }
+                },
+                {
+                    "name": "\u81ea\u7136",
+                    "value": 49,
+                    "textStyle": {
+                        "color": "rgb(114,42,71)"
+                    }
+                },
+                {
+                    "name": "\u56fd\u5e86",
+                    "value": 49,
+                    "textStyle": {
+                        "color": "rgb(130,85,138)"
+                    }
+                },
+                {
+                    "name": "\u4fdd\u62a4",
+                    "value": 48,
+                    "textStyle": {
+                        "color": "rgb(119,42,113)"
+                    }
+                },
+                {
+                    "name": "\u5b54\u96c0",
+                    "value": 47,
+                    "textStyle": {
+                        "color": "rgb(91,74,98)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u4e9b",
+                    "value": 47,
+                    "textStyle": {
+                        "color": "rgb(140,17,57)"
+                    }
+                },
+                {
+                    "name": "\u7ba1\u7406",
+                    "value": 47,
+                    "textStyle": {
+                        "color": "rgb(60,113,148)"
+                    }
+                },
+                {
+                    "name": "\u4fdd\u62a4\u533a",
+                    "value": 47,
+                    "textStyle": {
+                        "color": "rgb(150,119,152)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u8981",
+                    "value": 46,
+                    "textStyle": {
+                        "color": "rgb(23,69,117)"
+                    }
+                },
+                {
+                    "name": "\u751f\u6001",
+                    "value": 46,
+                    "textStyle": {
+                        "color": "rgb(138,150,13)"
+                    }
+                },
+                {
+                    "name": "\u51e0\u53ea",
+                    "value": 46,
+                    "textStyle": {
+                        "color": "rgb(93,29,67)"
+                    }
+                }
+            ],
+            "drawOutOfBound": false,
+            "textStyle": {
+                "emphasis": {}
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "title": [
+        {
+            "show": true,
+            "text": "\u8bc4\u8bba\u5173\u952e\u8bcd\u8bcd\u4e91",
+            "target": "blank",
+            "subtext": "\u5168\u90e8200+\u5173\u952e\u8bcd",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_dda2c5477b9142dc9943449f93d59ad7.setOption(option_dda2c5477b9142dc9943449f93d59ad7);
+    </script>
+<br/>                <div id="1636f6ef7f4d439f8f1debe97939986f" class="chart-container" style="width:800px; height:500px; "></div>
+    <script>
+        var chart_1636f6ef7f4d439f8f1debe97939986f = echarts.init(
+            document.getElementById('1636f6ef7f4d439f8f1debe97939986f'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_1636f6ef7f4d439f8f1debe97939986f = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "wordCloud",
+            "name": "\u597d\u8bc4\u5173\u952e\u8bcd\u8bcd\u4e91 (4-5\u661f)",
+            "shape": "circle",
+            "rotationRange": [
+                -90,
+                90
+            ],
+            "rotationStep": 45,
+            "girdSize": 20,
+            "sizeRange": [
+                10,
+                50
+            ],
+            "data": [
+                {
+                    "name": "\u9e8b\u9e7f",
+                    "value": 1931,
+                    "textStyle": {
+                        "color": "rgb(128,30,150)"
+                    }
+                },
+                {
+                    "name": "\u89c2\u5149\u8f66",
+                    "value": 378,
+                    "textStyle": {
+                        "color": "rgb(105,32,119)"
+                    }
+                },
+                {
+                    "name": "\u80e1\u841d\u535c",
+                    "value": 362,
+                    "textStyle": {
+                        "color": "rgb(15,81,56)"
+                    }
+                },
+                {
+                    "name": "\u8fd1\u8ddd\u79bb",
+                    "value": 278,
+                    "textStyle": {
+                        "color": "rgb(36,70,134)"
+                    }
+                },
+                {
+                    "name": "\u4f53\u9a8c",
+                    "value": 264,
+                    "textStyle": {
+                        "color": "rgb(125,103,160)"
+                    }
+                },
+                {
+                    "name": "\u5b69\u5b50",
+                    "value": 224,
+                    "textStyle": {
+                        "color": "rgb(1,76,112)"
+                    }
+                },
+                {
+                    "name": "\u63a5\u89e6",
+                    "value": 183,
+                    "textStyle": {
+                        "color": "rgb(24,51,116)"
+                    }
+                },
+                {
+                    "name": "\u5c0f\u670b\u53cb",
+                    "value": 181,
+                    "textStyle": {
+                        "color": "rgb(116,52,155)"
+                    }
+                },
+                {
+                    "name": "\u770b\u5230",
+                    "value": 179,
+                    "textStyle": {
+                        "color": "rgb(7,31,36)"
+                    }
+                },
+                {
+                    "name": "\u56ed\u533a",
+                    "value": 177,
+                    "textStyle": {
+                        "color": "rgb(108,82,20)"
+                    }
+                },
+                {
+                    "name": "\u7535\u74f6\u8f66",
+                    "value": 166,
+                    "textStyle": {
+                        "color": "rgb(80,114,157)"
+                    }
+                },
+                {
+                    "name": "\u559c\u6b22",
+                    "value": 154,
+                    "textStyle": {
+                        "color": "rgb(84,37,77)"
+                    }
+                },
+                {
+                    "name": "\u6392\u961f",
+                    "value": 149,
+                    "textStyle": {
+                        "color": "rgb(142,61,140)"
+                    }
+                },
+                {
+                    "name": "\u4e2d\u534e",
+                    "value": 144,
+                    "textStyle": {
+                        "color": "rgb(10,66,151)"
+                    }
+                },
+                {
+                    "name": "\u9002\u5408",
+                    "value": 143,
+                    "textStyle": {
+                        "color": "rgb(21,45,119)"
+                    }
+                },
+                {
+                    "name": "\u5f00\u5fc3",
+                    "value": 140,
+                    "textStyle": {
+                        "color": "rgb(125,108,135)"
+                    }
+                },
+                {
+                    "name": "\u5f88\u5927",
+                    "value": 139,
+                    "textStyle": {
+                        "color": "rgb(82,14,129)"
+                    }
+                },
+                {
+                    "name": "\u53ef\u7231",
+                    "value": 128,
+                    "textStyle": {
+                        "color": "rgb(92,82,130)"
+                    }
+                },
+                {
+                    "name": "\u91ce\u751f",
+                    "value": 123,
+                    "textStyle": {
+                        "color": "rgb(157,141,133)"
+                    }
+                },
+                {
+                    "name": "\u52a8\u7269",
+                    "value": 120,
+                    "textStyle": {
+                        "color": "rgb(44,97,49)"
+                    }
+                },
+                {
+                    "name": "\u65b9\u4fbf",
+                    "value": 120,
+                    "textStyle": {
+                        "color": "rgb(47,72,110)"
+                    }
+                },
+                {
+                    "name": "\u8fd8\u6709",
+                    "value": 118,
+                    "textStyle": {
+                        "color": "rgb(56,23,85)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u5b9a",
+                    "value": 100,
+                    "textStyle": {
+                        "color": "rgb(98,72,97)"
+                    }
+                },
+                {
+                    "name": "\u4f46\u662f",
+                    "value": 98,
+                    "textStyle": {
+                        "color": "rgb(69,71,141)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u53bb",
+                    "value": 95,
+                    "textStyle": {
+                        "color": "rgb(16,37,47)"
+                    }
+                },
+                {
+                    "name": "\u4e92\u52a8",
+                    "value": 91,
+                    "textStyle": {
+                        "color": "rgb(73,117,126)"
+                    }
+                },
+                {
+                    "name": "\u770b\u770b",
+                    "value": 91,
+                    "textStyle": {
+                        "color": "rgb(96,114,154)"
+                    }
+                },
+                {
+                    "name": "\u6e38\u73a9",
+                    "value": 89,
+                    "textStyle": {
+                        "color": "rgb(70,144,111)"
+                    }
+                },
+                {
+                    "name": "\u611f\u89c9",
+                    "value": 88,
+                    "textStyle": {
+                        "color": "rgb(33,74,83)"
+                    }
+                },
+                {
+                    "name": "\u5582\u98df",
+                    "value": 87,
+                    "textStyle": {
+                        "color": "rgb(3,114,151)"
+                    }
+                },
+                {
+                    "name": "\u73af\u5883",
+                    "value": 86,
+                    "textStyle": {
+                        "color": "rgb(76,112,83)"
+                    }
+                },
+                {
+                    "name": "\u76d0\u57ce",
+                    "value": 85,
+                    "textStyle": {
+                        "color": "rgb(12,136,32)"
+                    }
+                },
+                {
+                    "name": "\u5176\u4ed6",
+                    "value": 85,
+                    "textStyle": {
+                        "color": "rgb(80,146,51)"
+                    }
+                },
+                {
+                    "name": "\u5efa\u8bae",
+                    "value": 82,
+                    "textStyle": {
+                        "color": "rgb(148,63,153)"
+                    }
+                },
+                {
+                    "name": "\u4eb2\u5b50",
+                    "value": 80,
+                    "textStyle": {
+                        "color": "rgb(19,95,62)"
+                    }
+                },
+                {
+                    "name": "\u6e7f\u5730",
+                    "value": 76,
+                    "textStyle": {
+                        "color": "rgb(92,37,10)"
+                    }
+                },
+                {
+                    "name": "\u65f6\u95f4",
+                    "value": 75,
+                    "textStyle": {
+                        "color": "rgb(139,93,90)"
+                    }
+                },
+                {
+                    "name": "\u6563\u517b",
+                    "value": 75,
+                    "textStyle": {
+                        "color": "rgb(91,15,33)"
+                    }
+                },
+                {
+                    "name": "\u597d\u597d",
+                    "value": 74,
+                    "textStyle": {
+                        "color": "rgb(71,82,115)"
+                    }
+                },
+                {
+                    "name": "\u6709\u610f\u601d",
+                    "value": 74,
+                    "textStyle": {
+                        "color": "rgb(56,114,0)"
+                    }
+                },
+                {
+                    "name": "\u6e38\u5ba2",
+                    "value": 72,
+                    "textStyle": {
+                        "color": "rgb(70,101,67)"
+                    }
+                },
+                {
+                    "name": "\u666f\u70b9",
+                    "value": 70,
+                    "textStyle": {
+                        "color": "rgb(93,34,50)"
+                    }
+                },
+                {
+                    "name": "\u670d\u52a1",
+                    "value": 69,
+                    "textStyle": {
+                        "color": "rgb(101,53,27)"
+                    }
+                },
+                {
+                    "name": "\u8282\u5047\u65e5",
+                    "value": 66,
+                    "textStyle": {
+                        "color": "rgb(60,140,101)"
+                    }
+                },
+                {
+                    "name": "\u6027\u4ef7\u6bd4",
+                    "value": 64,
+                    "textStyle": {
+                        "color": "rgb(50,43,150)"
+                    }
+                },
+                {
+                    "name": "\u53f8\u673a",
+                    "value": 64,
+                    "textStyle": {
+                        "color": "rgb(130,75,125)"
+                    }
+                },
+                {
+                    "name": "\u5750\u8f66",
+                    "value": 62,
+                    "textStyle": {
+                        "color": "rgb(143,110,65)"
+                    }
+                },
+                {
+                    "name": "\u535a\u7269\u9986",
+                    "value": 62,
+                    "textStyle": {
+                        "color": "rgb(114,119,113)"
+                    }
+                },
+                {
+                    "name": "\u603b\u4f53",
+                    "value": 61,
+                    "textStyle": {
+                        "color": "rgb(134,87,79)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u6b21",
+                    "value": 61,
+                    "textStyle": {
+                        "color": "rgb(10,55,42)"
+                    }
+                },
+                {
+                    "name": "\u95e8\u7968",
+                    "value": 58,
+                    "textStyle": {
+                        "color": "rgb(88,158,80)"
+                    }
+                },
+                {
+                    "name": "\u8fdb\u5165",
+                    "value": 58,
+                    "textStyle": {
+                        "color": "rgb(17,73,131)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u5708",
+                    "value": 57,
+                    "textStyle": {
+                        "color": "rgb(131,112,127)"
+                    }
+                },
+                {
+                    "name": "\u666f\u8272",
+                    "value": 56,
+                    "textStyle": {
+                        "color": "rgb(3,13,21)"
+                    }
+                },
+                {
+                    "name": "\u56db\u4e0d\u50cf",
+                    "value": 56,
+                    "textStyle": {
+                        "color": "rgb(24,7,113)"
+                    }
+                },
+                {
+                    "name": "\u505c\u8f66",
+                    "value": 55,
+                    "textStyle": {
+                        "color": "rgb(64,5,18)"
+                    }
+                },
+                {
+                    "name": "\u6e38\u89c8\u8f66",
+                    "value": 55,
+                    "textStyle": {
+                        "color": "rgb(114,65,106)"
+                    }
+                },
+                {
+                    "name": "\u6700\u5927",
+                    "value": 55,
+                    "textStyle": {
+                        "color": "rgb(25,125,42)"
+                    }
+                },
+                {
+                    "name": "\u6e38\u89c8",
+                    "value": 53,
+                    "textStyle": {
+                        "color": "rgb(116,18,131)"
+                    }
+                },
+                {
+                    "name": "\u9009\u62e9",
+                    "value": 52,
+                    "textStyle": {
+                        "color": "rgb(104,86,81)"
+                    }
+                },
+                {
+                    "name": "\u5c0f\u5b69",
+                    "value": 52,
+                    "textStyle": {
+                        "color": "rgb(146,124,150)"
+                    }
+                },
+                {
+                    "name": "\u4e94\u4e00",
+                    "value": 52,
+                    "textStyle": {
+                        "color": "rgb(129,93,92)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u662f",
+                    "value": 52,
+                    "textStyle": {
+                        "color": "rgb(97,80,15)"
+                    }
+                },
+                {
+                    "name": "\u8fd9\u91cc",
+                    "value": 50,
+                    "textStyle": {
+                        "color": "rgb(123,43,117)"
+                    }
+                },
+                {
+                    "name": "\u4e58\u5750",
+                    "value": 49,
+                    "textStyle": {
+                        "color": "rgb(121,107,12)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u822c",
+                    "value": 49,
+                    "textStyle": {
+                        "color": "rgb(149,144,9)"
+                    }
+                },
+                {
+                    "name": "\u53ea\u80fd",
+                    "value": 49,
+                    "textStyle": {
+                        "color": "rgb(19,136,31)"
+                    }
+                },
+                {
+                    "name": "\u81ea\u7136",
+                    "value": 48,
+                    "textStyle": {
+                        "color": "rgb(47,159,89)"
+                    }
+                },
+                {
+                    "name": "\u5708\u517b",
+                    "value": 48,
+                    "textStyle": {
+                        "color": "rgb(145,148,58)"
+                    }
+                },
+                {
+                    "name": "\u4fdd\u62a4",
+                    "value": 47,
+                    "textStyle": {
+                        "color": "rgb(44,26,105)"
+                    }
+                },
+                {
+                    "name": "\u6574\u4f53",
+                    "value": 47,
+                    "textStyle": {
+                        "color": "rgb(82,59,50)"
+                    }
+                },
+                {
+                    "name": "\u8fc7\u6765",
+                    "value": 47,
+                    "textStyle": {
+                        "color": "rgb(94,122,124)"
+                    }
+                },
+                {
+                    "name": "\u7801\u5934",
+                    "value": 47,
+                    "textStyle": {
+                        "color": "rgb(84,149,138)"
+                    }
+                },
+                {
+                    "name": "\u4eba\u592a\u591a",
+                    "value": 47,
+                    "textStyle": {
+                        "color": "rgb(135,117,154)"
+                    }
+                },
+                {
+                    "name": "\u9e7f\u738b",
+                    "value": 46,
+                    "textStyle": {
+                        "color": "rgb(96,26,89)"
+                    }
+                },
+                {
+                    "name": "\u95e8\u53e3",
+                    "value": 46,
+                    "textStyle": {
+                        "color": "rgb(58,80,9)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u4e0b",
+                    "value": 45,
+                    "textStyle": {
+                        "color": "rgb(97,22,60)"
+                    }
+                },
+                {
+                    "name": "\u5047\u671f",
+                    "value": 45,
+                    "textStyle": {
+                        "color": "rgb(102,142,44)"
+                    }
+                },
+                {
+                    "name": "\u8f66\u4e0a",
+                    "value": 44,
+                    "textStyle": {
+                        "color": "rgb(77,119,73)"
+                    }
+                },
+                {
+                    "name": "\u751f\u6001",
+                    "value": 44,
+                    "textStyle": {
+                        "color": "rgb(149,91,123)"
+                    }
+                }
+            ],
+            "drawOutOfBound": false,
+            "textStyle": {
+                "emphasis": {}
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "title": [
+        {
+            "show": true,
+            "text": "\u597d\u8bc4\u5173\u952e\u8bcd\u8bcd\u4e91 (4-5\u661f)",
+            "target": "blank",
+            "subtext": "\u597d\u8bc4\u6570: 2698 \u6761",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_1636f6ef7f4d439f8f1debe97939986f.setOption(option_1636f6ef7f4d439f8f1debe97939986f);
+    </script>
+<br/>                <div id="bf0481dcc56940aeab2849e62e1f9f39" class="chart-container" style="width:800px; height:500px; "></div>
+    <script>
+        var chart_bf0481dcc56940aeab2849e62e1f9f39 = echarts.init(
+            document.getElementById('bf0481dcc56940aeab2849e62e1f9f39'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_bf0481dcc56940aeab2849e62e1f9f39 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "wordCloud",
+            "name": "\u5dee\u8bc4\u5173\u952e\u8bcd\u8bcd\u4e91 (1-2\u661f)",
+            "shape": "circle",
+            "rotationRange": [
+                -90,
+                90
+            ],
+            "rotationStep": 45,
+            "girdSize": 20,
+            "sizeRange": [
+                10,
+                50
+            ],
+            "data": [
+                {
+                    "name": "\u9e8b\u9e7f",
+                    "value": 72,
+                    "textStyle": {
+                        "color": "rgb(113,64,86)"
+                    }
+                },
+                {
+                    "name": "\u89c2\u5149\u8f66",
+                    "value": 40,
+                    "textStyle": {
+                        "color": "rgb(18,64,36)"
+                    }
+                },
+                {
+                    "name": "\u6392\u961f",
+                    "value": 39,
+                    "textStyle": {
+                        "color": "rgb(1,21,24)"
+                    }
+                },
+                {
+                    "name": "\u770b\u5230",
+                    "value": 25,
+                    "textStyle": {
+                        "color": "rgb(119,157,89)"
+                    }
+                },
+                {
+                    "name": "\u4f53\u9a8c",
+                    "value": 25,
+                    "textStyle": {
+                        "color": "rgb(152,28,156)"
+                    }
+                },
+                {
+                    "name": "\u95e8\u7968",
+                    "value": 23,
+                    "textStyle": {
+                        "color": "rgb(60,157,123)"
+                    }
+                },
+                {
+                    "name": "\u5de5\u4f5c\u4eba\u5458",
+                    "value": 21,
+                    "textStyle": {
+                        "color": "rgb(22,72,63)"
+                    }
+                },
+                {
+                    "name": "\u7535\u74f6\u8f66",
+                    "value": 21,
+                    "textStyle": {
+                        "color": "rgb(115,128,146)"
+                    }
+                },
+                {
+                    "name": "\u666f\u70b9",
+                    "value": 18,
+                    "textStyle": {
+                        "color": "rgb(116,107,75)"
+                    }
+                },
+                {
+                    "name": "\u6e38\u5ba2",
+                    "value": 18,
+                    "textStyle": {
+                        "color": "rgb(72,47,154)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u8981",
+                    "value": 15,
+                    "textStyle": {
+                        "color": "rgb(42,101,80)"
+                    }
+                },
+                {
+                    "name": "\u51e0\u53ea",
+                    "value": 15,
+                    "textStyle": {
+                        "color": "rgb(104,113,91)"
+                    }
+                },
+                {
+                    "name": "\u7ba1\u7406",
+                    "value": 14,
+                    "textStyle": {
+                        "color": "rgb(52,129,21)"
+                    }
+                },
+                {
+                    "name": "\u5206\u949f",
+                    "value": 14,
+                    "textStyle": {
+                        "color": "rgb(45,52,50)"
+                    }
+                },
+                {
+                    "name": "\u80e1\u841d\u535c",
+                    "value": 14,
+                    "textStyle": {
+                        "color": "rgb(136,125,139)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u5230",
+                    "value": 14,
+                    "textStyle": {
+                        "color": "rgb(55,70,14)"
+                    }
+                },
+                {
+                    "name": "5A",
+                    "value": 14,
+                    "textStyle": {
+                        "color": "rgb(71,145,151)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u822c",
+                    "value": 14,
+                    "textStyle": {
+                        "color": "rgb(153,1,5)"
+                    }
+                },
+                {
+                    "name": "\u79df\u8f66",
+                    "value": 13,
+                    "textStyle": {
+                        "color": "rgb(34,104,56)"
+                    }
+                },
+                {
+                    "name": "\u53ea\u80fd",
+                    "value": 13,
+                    "textStyle": {
+                        "color": "rgb(28,20,120)"
+                    }
+                },
+                {
+                    "name": "\u95e8\u53e3",
+                    "value": 13,
+                    "textStyle": {
+                        "color": "rgb(158,113,83)"
+                    }
+                },
+                {
+                    "name": "\u8f66\u7968",
+                    "value": 12,
+                    "textStyle": {
+                        "color": "rgb(126,125,134)"
+                    }
+                },
+                {
+                    "name": "\u4e70\u7968",
+                    "value": 12,
+                    "textStyle": {
+                        "color": "rgb(4,67,89)"
+                    }
+                },
+                {
+                    "name": "\u670d\u52a1",
+                    "value": 12,
+                    "textStyle": {
+                        "color": "rgb(120,128,6)"
+                    }
+                },
+                {
+                    "name": "\u800c\u4e14",
+                    "value": 11,
+                    "textStyle": {
+                        "color": "rgb(100,32,22)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u70b9",
+                    "value": 11,
+                    "textStyle": {
+                        "color": "rgb(18,110,30)"
+                    }
+                },
+                {
+                    "name": "\u53ea\u6709",
+                    "value": 11,
+                    "textStyle": {
+                        "color": "rgb(126,54,85)"
+                    }
+                },
+                {
+                    "name": "\u505c\u8f66",
+                    "value": 10,
+                    "textStyle": {
+                        "color": "rgb(113,107,140)"
+                    }
+                },
+                {
+                    "name": "\u9700\u8981",
+                    "value": 10,
+                    "textStyle": {
+                        "color": "rgb(134,9,31)"
+                    }
+                },
+                {
+                    "name": "\u770b\u4e0d\u5230",
+                    "value": 10,
+                    "textStyle": {
+                        "color": "rgb(91,35,83)"
+                    }
+                },
+                {
+                    "name": "\u624d\u80fd",
+                    "value": 9,
+                    "textStyle": {
+                        "color": "rgb(136,5,71)"
+                    }
+                },
+                {
+                    "name": "\u7136\u540e",
+                    "value": 9,
+                    "textStyle": {
+                        "color": "rgb(95,50,22)"
+                    }
+                },
+                {
+                    "name": "\u5708\u517b",
+                    "value": 9,
+                    "textStyle": {
+                        "color": "rgb(143,140,70)"
+                    }
+                },
+                {
+                    "name": "\u516c\u91cc",
+                    "value": 9,
+                    "textStyle": {
+                        "color": "rgb(29,7,38)"
+                    }
+                },
+                {
+                    "name": "\u5efa\u8bae",
+                    "value": 9,
+                    "textStyle": {
+                        "color": "rgb(131,155,101)"
+                    }
+                },
+                {
+                    "name": "\u5168\u7a0b",
+                    "value": 9,
+                    "textStyle": {
+                        "color": "rgb(106,58,24)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u662f",
+                    "value": 9,
+                    "textStyle": {
+                        "color": "rgb(45,99,116)"
+                    }
+                },
+                {
+                    "name": "\u76f4\u63a5",
+                    "value": 9,
+                    "textStyle": {
+                        "color": "rgb(94,98,121)"
+                    }
+                },
+                {
+                    "name": "\u6781\u5dee",
+                    "value": 9,
+                    "textStyle": {
+                        "color": "rgb(67,27,107)"
+                    }
+                },
+                {
+                    "name": "\u53f8\u673a",
+                    "value": 9,
+                    "textStyle": {
+                        "color": "rgb(85,159,10)"
+                    }
+                },
+                {
+                    "name": "\u5783\u573e",
+                    "value": 9,
+                    "textStyle": {
+                        "color": "rgb(117,159,54)"
+                    }
+                },
+                {
+                    "name": "\u5f88\u5dee",
+                    "value": 8,
+                    "textStyle": {
+                        "color": "rgb(80,13,15)"
+                    }
+                },
+                {
+                    "name": "\u771f\u662f",
+                    "value": 8,
+                    "textStyle": {
+                        "color": "rgb(160,124,132)"
+                    }
+                },
+                {
+                    "name": "\u5fc5\u987b",
+                    "value": 8,
+                    "textStyle": {
+                        "color": "rgb(1,114,15)"
+                    }
+                },
+                {
+                    "name": "\u6563\u517b",
+                    "value": 8,
+                    "textStyle": {
+                        "color": "rgb(23,37,80)"
+                    }
+                },
+                {
+                    "name": "\u8fd8\u6709",
+                    "value": 8,
+                    "textStyle": {
+                        "color": "rgb(72,84,155)"
+                    }
+                },
+                {
+                    "name": "\u4f46\u662f",
+                    "value": 8,
+                    "textStyle": {
+                        "color": "rgb(106,148,53)"
+                    }
+                },
+                {
+                    "name": "\u6e38\u8239",
+                    "value": 8,
+                    "textStyle": {
+                        "color": "rgb(52,141,141)"
+                    }
+                },
+                {
+                    "name": "\u8282\u5047\u65e5",
+                    "value": 8,
+                    "textStyle": {
+                        "color": "rgb(136,120,11)"
+                    }
+                },
+                {
+                    "name": "\u505c\u8f66\u573a",
+                    "value": 8,
+                    "textStyle": {
+                        "color": "rgb(155,156,58)"
+                    }
+                },
+                {
+                    "name": "\u6536\u8d39",
+                    "value": 8,
+                    "textStyle": {
+                        "color": "rgb(59,4,47)"
+                    }
+                },
+                {
+                    "name": "\u6027\u4ef7\u6bd4",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(17,100,9)"
+                    }
+                },
+                {
+                    "name": "\u8fd9\u4e48",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(64,22,64)"
+                    }
+                },
+                {
+                    "name": "\u77e5\u9053",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(2,97,132)"
+                    }
+                },
+                {
+                    "name": "\u6700\u540e",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(44,1,119)"
+                    }
+                },
+                {
+                    "name": "\u4f60\u4eec",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(89,31,64)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u5982",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(31,99,151)"
+                    }
+                },
+                {
+                    "name": "\u611f\u89c9",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(131,136,108)"
+                    }
+                },
+                {
+                    "name": "\u6839\u672c",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(24,74,144)"
+                    }
+                },
+                {
+                    "name": "\u91ce\u751f",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(90,91,111)"
+                    }
+                },
+                {
+                    "name": "\u79e9\u5e8f",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(110,51,158)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u5b9a",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(110,8,141)"
+                    }
+                },
+                {
+                    "name": "\u89c2\u5149",
+                    "value": 7,
+                    "textStyle": {
+                        "color": "rgb(14,89,73)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u597d\u73a9",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(42,8,142)"
+                    }
+                },
+                {
+                    "name": "\u5750\u8f66",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(68,145,135)"
+                    }
+                },
+                {
+                    "name": "\u8fc7\u6765",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(104,133,121)"
+                    }
+                },
+                {
+                    "name": "\u4e92\u52a8",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(159,146,99)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u597d",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(152,153,107)"
+                    }
+                },
+                {
+                    "name": "\u6216\u8005",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(126,80,44)"
+                    }
+                },
+                {
+                    "name": "\u4e00\u4e0b",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(50,66,48)"
+                    }
+                },
+                {
+                    "name": "\u51fa\u53e3",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(157,94,41)"
+                    }
+                },
+                {
+                    "name": "\u63a5\u9a73",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(43,108,94)"
+                    }
+                },
+                {
+                    "name": "\u80fd\u529b",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(48,73,85)"
+                    }
+                },
+                {
+                    "name": "\u4e94\u4e00",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(57,61,65)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u4f1a",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(62,1,18)"
+                    }
+                },
+                {
+                    "name": "\u4e0d\u8ba9",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(91,82,143)"
+                    }
+                },
+                {
+                    "name": "\u5fd7\u613f\u8005",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(44,20,56)"
+                    }
+                },
+                {
+                    "name": "\u9664\u4e86",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(57,139,134)"
+                    }
+                },
+                {
+                    "name": "\u5dee\u8bc4",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(87,91,7)"
+                    }
+                },
+                {
+                    "name": "\u610f\u601d",
+                    "value": 6,
+                    "textStyle": {
+                        "color": "rgb(98,148,135)"
+                    }
+                }
+            ],
+            "drawOutOfBound": false,
+            "textStyle": {
+                "emphasis": {}
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "title": [
+        {
+            "show": true,
+            "text": "\u5dee\u8bc4\u5173\u952e\u8bcd\u8bcd\u4e91 (1-2\u661f)",
+            "target": "blank",
+            "subtext": "\u5dee\u8bc4\u6570: 157 \u6761",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_bf0481dcc56940aeab2849e62e1f9f39.setOption(option_bf0481dcc56940aeab2849e62e1f9f39);
+    </script>
+<br/>                <div id="65534957ff3c4f75bcdf00ae5695c103" class="chart-container" style="width:900px; height:500px; "></div>
+    <script>
+        var chart_65534957ff3c4f75bcdf00ae5695c103 = echarts.init(
+            document.getElementById('65534957ff3c4f75bcdf00ae5695c103'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_65534957ff3c4f75bcdf00ae5695c103 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u51fa\u73b0\u6b21\u6570",
+            "legendHoverLink": true,
+            "data": [
+                2126,
+                452,
+                403,
+                322,
+                289,
+                231,
+                222,
+                218,
+                207,
+                204,
+                193,
+                188,
+                158,
+                154,
+                153,
+                147,
+                142,
+                142,
+                135,
+                132
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u51fa\u73b0\u6b21\u6570"
+            ],
+            "selected": {},
+            "show": true,
+            "right": "4%",
+            "top": "3%",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "axis",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "axisLabel": {
+                "show": true,
+                "margin": 8,
+                "fontSize": 12,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                "\u9e8b\u9e7f",
+                "\u89c2\u5149\u8f66",
+                "\u80e1\u841d\u535c",
+                "\u4f53\u9a8c",
+                "\u8fd1\u8ddd\u79bb",
+                "\u5b69\u5b50",
+                "\u770b\u5230",
+                "\u6392\u961f",
+                "\u56ed\u533a",
+                "\u7535\u74f6\u8f66",
+                "\u5c0f\u670b\u53cb",
+                "\u63a5\u89e6",
+                "\u559c\u6b22",
+                "\u5f88\u5927",
+                "\u4e2d\u534e",
+                "\u9002\u5408",
+                "\u5f00\u5fc3",
+                "\u91ce\u751f",
+                "\u8fd8\u6709",
+                "\u53ef\u7231"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        }
+    ],
+    "color": [
+        "#F39C12"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u8bc4\u8bba\u9ad8\u9891\u8bcd TOP20",
+            "target": "blank",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_65534957ff3c4f75bcdf00ae5695c103.setOption(option_65534957ff3c4f75bcdf00ae5695c103);
+    </script>
+<br/>                <div id="7744aee28c8b4e47a34b8d135e7b6039" class="chart-container" style="width:800px; height:450px; "></div>
+    <script>
+        var chart_7744aee28c8b4e47a34b8d135e7b6039 = echarts.init(
+            document.getElementById('7744aee28c8b4e47a34b8d135e7b6039'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_7744aee28c8b4e47a34b8d135e7b6039 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u8bc4\u8bba\u6570",
+            "legendHoverLink": true,
+            "data": [
+                945,
+                1050,
+                340,
+                489,
+                171,
+                51,
+                4,
+                0
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u8bc4\u8bba\u6570"
+            ],
+            "selected": {},
+            "show": true,
+            "right": "4%",
+            "top": "3%",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "name": "\u5b57\u6570\u533a\u95f4",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                "\u226410\u5b57",
+                "11-30\u5b57",
+                "31-50\u5b57",
+                "51-100\u5b57",
+                "101-200\u5b57",
+                "201-500\u5b57",
+                "501-1000\u5b57",
+                ">1000\u5b57"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "name": "\u8bc4\u8bba\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        }
+    ],
+    "color": [
+        "#9b59b6"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u8bc4\u8bba\u957f\u5ea6\u5206\u5e03",
+            "target": "blank",
+            "subtext": "\u5e73\u5747\u5b57\u6570: 38\u5b57",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_7744aee28c8b4e47a34b8d135e7b6039.setOption(option_7744aee28c8b4e47a34b8d135e7b6039);
+    </script>
+<br/>                <div id="02a38d2c65114a0f9ec71cd3398b8903" class="chart-container" style="width:600px; height:400px; "></div>
+    <script>
+        var chart_02a38d2c65114a0f9ec71cd3398b8903 = echarts.init(
+            document.getElementById('02a38d2c65114a0f9ec71cd3398b8903'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_02a38d2c65114a0f9ec71cd3398b8903 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "pie",
+            "name": "\u56fe\u7247\u8bc4\u8bba\u5360\u6bd4",
+            "colorBy": "data",
+            "legendHoverLink": true,
+            "selectedMode": false,
+            "selectedOffset": 10,
+            "clockwise": true,
+            "startAngle": 90,
+            "minAngle": 0,
+            "minShowLabelAngle": 0,
+            "avoidLabelOverlap": true,
+            "stillShowZeroSum": true,
+            "percentPrecision": 2,
+            "showEmptyCircle": true,
+            "emptyCircleStyle": {
+                "color": "lightgray",
+                "borderColor": "#000",
+                "borderWidth": 0,
+                "borderType": "solid",
+                "borderDashOffset": 0,
+                "borderCap": "butt",
+                "borderJoin": "bevel",
+                "borderMiterLimit": 10,
+                "opacity": 1
+            },
+            "data": [
+                {
+                    "name": "\u7eaf\u6587\u5b57\u8bc4\u8bba",
+                    "value": 3050
+                }
+            ],
+            "radius": [
+                "35%",
+                "60%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "margin": 8,
+                "fontSize": 13,
+                "formatter": "{b}: {c} ({d}%)",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "labelLine": {
+                "show": true,
+                "showAbove": false,
+                "length": 15,
+                "length2": 15,
+                "smooth": false,
+                "minTurnAngle": 90,
+                "maxSurfaceAngle": 90
+            },
+            "emphasis": {
+                "disabled": false,
+                "scale": false,
+                "focus": "none",
+                "blurScope": "coordinateSystem",
+                "labelLine": {
+                    "show": false
+                }
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u7eaf\u6587\u5b57\u8bc4\u8bba"
+            ],
+            "selected": {},
+            "show": true,
+            "bottom": "3%",
+            "orient": "horizontal",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "color": [
+        "#e67e22",
+        "#3498db"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u6709\u56fe vs \u7eaf\u6587\u5b57\u8bc4\u8bba",
+            "target": "blank",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_02a38d2c65114a0f9ec71cd3398b8903.setOption(option_02a38d2c65114a0f9ec71cd3398b8903);
+    </script>
+<br/>                <div id="2e8fffc7abb24c348f3da219f0feeeb9" class="chart-container" style="width:800px; height:500px; "></div>
+    <script>
+        var chart_2e8fffc7abb24c348f3da219f0feeeb9 = echarts.init(
+            document.getElementById('2e8fffc7abb24c348f3da219f0feeeb9'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_2e8fffc7abb24c348f3da219f0feeeb9 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "pie",
+            "name": "\u60c5\u611f\u6781\u6027",
+            "colorBy": "data",
+            "legendHoverLink": true,
+            "selectedMode": false,
+            "selectedOffset": 10,
+            "clockwise": true,
+            "startAngle": 90,
+            "minAngle": 0,
+            "minShowLabelAngle": 0,
+            "avoidLabelOverlap": true,
+            "stillShowZeroSum": true,
+            "percentPrecision": 2,
+            "showEmptyCircle": true,
+            "emptyCircleStyle": {
+                "color": "lightgray",
+                "borderColor": "#000",
+                "borderWidth": 0,
+                "borderType": "solid",
+                "borderDashOffset": 0,
+                "borderCap": "butt",
+                "borderJoin": "bevel",
+                "borderMiterLimit": 10,
+                "opacity": 1
+            },
+            "data": [
+                {
+                    "name": "\u6b63\u9762",
+                    "value": 2295
+                },
+                {
+                    "name": "\u4e2d\u6027",
+                    "value": 227
+                },
+                {
+                    "name": "\u8d1f\u9762",
+                    "value": 528
+                }
+            ],
+            "radius": [
+                "35%",
+                "65%"
+            ],
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "label": {
+                "show": true,
+                "margin": 8,
+                "fontSize": 14,
+                "formatter": "{b}: {c} ({d}%)",
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            },
+            "labelLine": {
+                "show": true,
+                "showAbove": false,
+                "length": 15,
+                "length2": 15,
+                "smooth": false,
+                "minTurnAngle": 90,
+                "maxSurfaceAngle": 90
+            },
+            "emphasis": {
+                "disabled": false,
+                "scale": false,
+                "focus": "none",
+                "blurScope": "coordinateSystem",
+                "labelLine": {
+                    "show": false
+                }
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u6b63\u9762",
+                "\u4e2d\u6027",
+                "\u8d1f\u9762"
+            ],
+            "selected": {},
+            "show": true,
+            "bottom": "3%",
+            "orient": "horizontal",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "color": [
+        "#2ECC71",
+        "#F39C12",
+        "#E74C3C"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u60c5\u611f\u6781\u6027\u5206\u5e03\uff08SnowNLP \u6a21\u578b\uff09",
+            "target": "blank",
+            "subtext": "\u6b63\u9762\u22650.6 / \u8d1f\u9762\u22640.4 / \u4e2d\u6027\u4e4b\u95f4",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_2e8fffc7abb24c348f3da219f0feeeb9.setOption(option_2e8fffc7abb24c348f3da219f0feeeb9);
+    </script>
+<br/>                <div id="ce3ac139067e43f4864165fc6e74e6d9" class="chart-container" style="width:800px; height:500px; "></div>
+    <script>
+        var chart_ce3ac139067e43f4864165fc6e74e6d9 = echarts.init(
+            document.getElementById('ce3ac139067e43f4864165fc6e74e6d9'), 'default', {renderer: 'canvas', locale: 'ZH'});
+        var option_ce3ac139067e43f4864165fc6e74e6d9 = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "aria": {
+        "enabled": false
+    },
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u6b63\u9762",
+            "legendHoverLink": true,
+            "data": [
+                2176,
+                85,
+                34
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "sent",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "inside",
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u4e2d\u6027",
+            "legendHoverLink": true,
+            "data": [
+                191,
+                28,
+                8
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "sent",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "inside",
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u8d1f\u9762",
+            "legendHoverLink": true,
+            "data": [
+                331,
+                82,
+                115
+            ],
+            "realtimeSort": false,
+            "showBackground": false,
+            "stack": "sent",
+            "stackStrategy": "samesign",
+            "cursor": "pointer",
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "inside",
+                "margin": 8,
+                "richInheritPlainLabel": true,
+                "valueAnimation": false
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u6b63\u9762",
+                "\u4e2d\u6027",
+                "\u8d1f\u9762"
+            ],
+            "selected": {},
+            "show": true,
+            "right": "4%",
+            "top": "3%",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14,
+            "backgroundColor": "transparent",
+            "borderColor": "#ccc",
+            "borderRadius": 0,
+            "pageButtonItemGap": 5,
+            "pageButtonPosition": "end",
+            "pageFormatter": "{current}/{total}",
+            "pageIconColor": "#2f4554",
+            "pageIconInactiveColor": "#aaa",
+            "pageIconSize": 15,
+            "animationDurationUpdate": 800,
+            "selector": false,
+            "selectorPosition": "auto",
+            "selectorItemGap": 7,
+            "selectorButtonGap": 10,
+            "triggerEvent": false
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "axis",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "shadow"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "enterable": false,
+        "confine": false,
+        "appendToBody": false,
+        "transitionDuration": 0.4,
+        "displayTransition": true,
+        "textStyle": {
+            "fontSize": 14,
+            "richInheritPlainLabel": true
+        },
+        "borderWidth": 0,
+        "padding": 5,
+        "order": "seriesAsc"
+    },
+    "xAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0,
+            "data": [
+                "\u597d\u8bc4(4-5\u661f)",
+                "\u4e2d\u8bc4(3\u661f)",
+                "\u5dee\u8bc4(1-2\u661f)"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "show": true,
+            "scale": false,
+            "nameLocation": "end",
+            "nameGap": 15,
+            "nameTruncate": {},
+            "nameMoveOverlap": true,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "silent": false,
+            "triggerEvent": false,
+            "splitLine": {
+                "show": true,
+                "lineStyle": {
+                    "show": false
+                }
+            },
+            "animation": true,
+            "animationThreshold": 2000,
+            "animationDuration": 1000,
+            "animationEasing": "cubicOut",
+            "animationDelay": 0,
+            "animationDurationUpdate": 300,
+            "animationEasingUpdate": "cubicOut",
+            "animationDelayUpdate": 0
+        }
+    ],
+    "color": [
+        "#2ECC71",
+        "#F39C12",
+        "#E74C3C"
+    ],
+    "title": [
+        {
+            "show": true,
+            "text": "\u8bc4\u5206\u7b49\u7ea7 \u00d7 \u60c5\u611f\u6781\u6027",
+            "target": "blank",
+            "subtext": "\u661f\u7ea7 vs \u6587\u672c\u8bed\u4e49\u503e\u5411",
+            "subtarget": "blank",
+            "left": "center",
+            "top": "2%",
+            "padding": 5,
+            "itemGap": 10,
+            "textAlign": "auto",
+            "textVerticalAlign": "auto",
+            "triggerEvent": false
+        }
+    ]
+};
+        chart_ce3ac139067e43f4864165fc6e74e6d9.setOption(option_ce3ac139067e43f4864165fc6e74e6d9);
+    </script>
+<br/>    </div>
+    <script>
+    </script>
+</body>
+</html>
