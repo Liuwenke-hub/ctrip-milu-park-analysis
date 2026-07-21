@@ -21,7 +21,7 @@
     12  情感极性分布          柱状图      SnowNLP 模型 正面/中性/负面
 
 数据源:    config.REVIEWS_CSV （携程评价，UTF-8-BOM 编码）
-输出路径:  config.CHART_DIR 下的 11 张 PNG 文件（300 DPI）
+输出路径:  config.CHART_DIR 下的 12 张 PNG 文件（300 DPI）
 
 """
 
@@ -285,11 +285,14 @@ def chart_seasonal(df_valid, font):
 # =====================================================================
 def chart_member_distribution(df, font):
     print("\n生成图6: 用户等级分布")
-    member_dist = df["用户等级"].value_counts().head(6)  # 取前 6 类
+    member_dist = df["用户等级"].value_counts()  # 全部有效等级（实际 4 类）
+    valid_total = int(df["用户等级"].notna().sum())  # 有效样本 2547 条，作为百分比分母
     fig, ax = plt.subplots(figsize=(9, 6))
     colors_list = [COLORS["primary"], COLORS["info"], COLORS["success"],
                    COLORS["warning"], COLORS["danger"], COLORS["secondary"]]
-    labels = [f"{k}: {v}条 ({v/len(df)*100:.1f}%)" for k, v in member_dist.items()]
+    # 百分比基于有效样本（2547 条）计算，使各扇区占比之和恰为 100%，
+    # 避免原先以全量 3050 做分母导致"扇区之和仅 83.5%"的语义偏差
+    labels = [f"{k}: {v}条 ({v/valid_total*100:.1f}%)" for k, v in member_dist.items()]
     explode = [0.03] * len(member_dist)
 
     wedges, _ = ax.pie(
@@ -311,7 +314,7 @@ def chart_member_distribution(df, font):
     for text in legend.get_texts():
         text.set_fontproperties(font)
 
-    ax.set_title("用户等级分布", fontproperties=font, fontsize=14, pad=20)
+    ax.set_title(f"用户等级分布（基于 {valid_total} 条有效样本）", fontproperties=font, fontsize=14, pad=20)
     ax.axis("equal")
     save_chart(fig, "06_用户等级分布", tight=False)
 
@@ -484,7 +487,7 @@ def chart_sentiment_polarity(df, font):
 
 
 def main():
-    """图表生成主入口：加载数据 -> 设置字体 -> 依次生成 11 张图表。"""
+    """图表生成主入口：加载数据 -> 设置字体 -> 依次生成 12 张图表。"""
     plt.style.use("default")
     font = setup_chinese_font()
 
